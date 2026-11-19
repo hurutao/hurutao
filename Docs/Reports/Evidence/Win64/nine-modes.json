@@ -1,0 +1,121 @@
+[
+  {
+    "mode": 1,
+    "points": 100,
+    "seed": 173,
+    "samples": 36,
+    "heldRings": 2,
+    "stages": [
+      1
+    ],
+    "actionTimes": [],
+    "aimAssistEnabled": false,
+    "softwareInputOnly": true
+  },
+  {
+    "mode": 2,
+    "points": 100,
+    "seed": 173,
+    "samples": 89,
+    "heldRings": 0,
+    "stages": [
+      2
+    ],
+    "actionTimes": [],
+    "aimAssistEnabled": false,
+    "softwareInputOnly": true
+  },
+  {
+    "mode": 3,
+    "points": 100,
+    "seed": 173,
+    "samples": 89,
+    "heldRings": 0,
+    "stages": [
+      3
+    ],
+    "actionTimes": [],
+    "aimAssistEnabled": false,
+    "softwareInputOnly": true
+  },
+  {
+    "mode": 4,
+    "points": 100,
+    "seed": 173,
+    "samples": 89,
+    "heldRings": 0,
+    "stages": [
+      4
+    ],
+    "actionTimes": [],
+    "aimAssistEnabled": false,
+    "softwareInputOnly": true
+  },
+  {
+    "mode": 5,
+    "points": 100,
+    "seed": 173,
+    "samples": 300,
+    "heldRings": 2,
+    "stages": [
+      3,
+      4,
+      2,
+      1
+    ],
+    "actionTimes": [],
+    "aimAssistEnabled": false,
+    "softwareInputOnly": true
+  },
+  {
+    "mode": 6,
+    "points": 50,
+    "seed": 173,
+    "samples": 1,
+    "heldRings": 0,
+    "stages": [],
+    "actionTimes": [],
+    "aimAssistEnabled": false,
+    "softwareInputOnly": true
+  },
+  {
+    "mode": 7,
+    "points": 96,
+    "seed": 173,
+    "samples": 30,
+    "heldRings": 0,
+    "stages": [],
+    "actionTimes": [],
+    "aimAssistEnabled": false,
+    "softwareInputOnly": true
+  },
+  {
+    "mode": 8,
+    "points": 70,
+    "seed": 173,
+    "samples": 148,
+    "heldRings": 0,
+    "stages": [],
+    "actionTimes": [
+      1.0006869390490465,
+      1.5005513628711924,
+      2.000868595787324,
+      2.500987903214991
+    ],
+    "aimAssistEnabled": false,
+    "softwareInputOnly": true
+  },
+  {
+    "mode": 9,
+    "points": 48,
+    "seed": 173,
+    "samples": 89,
+    "heldRings": 0,
+    "stages": [
+      9
+    ],
+    "actionTimes": [],
+    "aimAssistEnabled": false,
+    "softwareInputOnly": true
+  }
+]

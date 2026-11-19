@@ -1,0 +1,21 @@
+{
+	"run": 3,
+	"width": 1920,
+	"height": 1080,
+	"frames": 20739,
+	"seconds": 120.0004345998168,
+	"fps": 172.82437408798901,
+	"meanMs": 5.7862208688855201,
+	"p95Ms": 6.303001195192337,
+	"over50Ms": 0,
+	"maxMs": 11.96729764342308,
+	"r.ScreenPercentage": 100,
+	"r.VSync": 0,
+	"t.MaxFPS": 0,
+	"sg.ShadowQuality": 3,
+	"sg.EffectsQuality": 3,
+	"sg.AntiAliasingQuality": 3,
+	"sg.ViewDistanceQuality": 3,
+	"sg.TextureQuality": 3,
+	"SchemaVersion": 1
+}

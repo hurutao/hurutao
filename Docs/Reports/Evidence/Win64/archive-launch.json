@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-20",
+  "archiveSHA256": "87aab879341bbe95e1541cdb7095a809142eae6b2c4ab158f9675c0ccf134017",
+  "launcher": "FPSArena.exe",
+  "extractType": "final ZIP extracted over QA directory after verifying all 31 previously tested staged runtime files by SHA-256",
+  "newOrUpdatedNonRuntimeItems": 16,
+  "options": [
+    "-BTGCapture",
+    "-windowed",
+    "-ResX=1920",
+    "-ResY=1080",
+    "-ForceRes",
+    "-unattended",
+    "isolated -UserDir"
+  ],
+  "exitCode": 0,
+  "captureFile": "ForgeHub.png",
+  "width": 1920,
+  "height": 1080,
+  "captureSizeBytes": 1203271,
+  "captureSHA256": "FFF03F90916B34771C265A48BD983006A6F4B06086099DF68C7909106802CFAC"
+}

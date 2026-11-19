@@ -1,0 +1,11 @@
+[2026.11.19-14.32.48:667][  0]LogTemp: Display: BTG Forge ready; modes=9
+[2026.11.19-14.32.50:535][240]LogTemp: Display: BTG complete M1 points=100 saved=1
+[2026.11.19-14.32.52:024][705]LogTemp: Display: BTG complete M2 points=100 saved=1
+[2026.11.19-14.32.53:500][172]LogTemp: Display: BTG complete M3 points=100 saved=1
+[2026.11.19-14.32.54:988][622]LogTemp: Display: BTG complete M4 points=100 saved=1
+[2026.11.19-14.32.59:512][254]LogTemp: Display: BTG complete M5 points=100 saved=1
+[2026.11.19-14.32.59:731][720]LogTemp: Display: BTG complete M6 points=50 saved=1
+[2026.11.19-14.33.00:405][193]LogTemp: Display: BTG complete M7 points=96 saved=1
+[2026.11.19-14.33.02:565][654]LogTemp: Display: BTG complete M8 points=70 saved=1
+[2026.11.19-14.33.04:138][ 79]LogTemp: Display: BTG complete M9 points=48 saved=1
+[2026.11.19-14.33.04:159][ 79]LogTemp: Display: BTG smoke completed 9 modes; workshop save=1 load=1 combat=1 respawn=1

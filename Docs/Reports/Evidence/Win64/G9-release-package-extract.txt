@@ -1,0 +1,7 @@
+Running: C:\Program Files\Epic Games\UE_5.9\Engine\Binaries\ThirdParty\DotNet\10.0\win-x64\dotnet.exe "C:\Program Files\Epic Games\UE_5.9\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.dll" -Target="FPSArenaEditor Win64 Development -Project=\"C:\Users\Administrator\Documents\Unreal Projects\FPSArena\FPSArena.uproject\"" -Target="FPSArena Win64 Shipping -Project=\"C:\Users\Administrator\Documents\Unreal Projects\FPSArena\FPSArena.uproject\"  -remoteini=\"C:\Users\Administrator\Documents\Unreal Projects\FPSArena\"  " -log="C:\Users\Administrator\AppData\Roaming\Unreal Engine\AutomationTool\Logs\C+Program+Files+Epic+Games+UE_5.9\UBA-FPSArenaEditor-Win64-Development.txt"
+LogInit: Display: Success - 0 error(s), 0 warning(s)
+********** COOK COMMAND COMPLETED **********
+********** STAGE COMMAND COMPLETED **********
+********** ARCHIVE COMMAND COMPLETED **********
+BUILD SUCCESSFUL
+AutomationTool exiting with ExitCode=0 (Success)

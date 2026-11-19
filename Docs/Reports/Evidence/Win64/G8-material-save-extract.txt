@@ -1,0 +1,2 @@
+[2026.11.19-14.39.08:872][  0]LogPython: BTG presentation assets ready
+[2026.11.19-14.39.08:983][  0]LogPython: BTG forge surfaces ready

@@ -1,0 +1,62 @@
+{
+  "dateLocal": "2026-11-20",
+  "physicalOperator": false,
+  "input": "Windows 键盘事件，经正常 Shipping 游戏窗口进入",
+  "firstSession": "UAT 暂存目录的 FPSArena.exe，独立 UserDir",
+  "secondSession": "从 ZIP 全量解压，在新进程中启动 FPSArena.exe 并复用同一 UserDir",
+  "observedSensitivity": [
+    165,
+    180
+  ],
+  "profileBackupCreated": true,
+  "workflow": [
+    "F1 → Right → Enter → F1 → R",
+    "Backspace → ] → N → R",
+    "退出并从解压目录重启",
+    "F1 → Right → Enter → F1 → H → R"
+  ],
+  "sessions": [
+    {
+      "session": "C02B57184C8A2C9AA41021A5E988DCDF",
+      "dateUtc": "20261119-211140-444",
+      "mode": 1,
+      "seed": 173,
+      "difficulty": 1,
+      "points": 8,
+      "aborted": false,
+      "device": "KeyboardMouse",
+      "durationSeconds": 27.313769798725843,
+      "samples": 1517,
+      "historySHA256": "0440E7A0C09BA709ED89BFB05069207587FF8B524B2E2E4CFEABFDCD886AECE8",
+      "traceSHA256": "D58B139D38CDC52A28F18929F25016DEE4DE5660B15A942F71DFB76FDB22BA0E"
+    },
+    {
+      "session": "CEF0018747596432A51907BF5289939C",
+      "dateUtc": "20261119-211333-943",
+      "mode": 2,
+      "seed": 359203,
+      "difficulty": 1,
+      "points": 6,
+      "aborted": false,
+      "device": "KeyboardMouse",
+      "durationSeconds": 30.00094649940729,
+      "samples": 1674,
+      "historySHA256": "B1CE1827E318C2DE97042357B9E76B5787AF8CE9C96B439E3E604C826BBF487D",
+      "traceSHA256": "A17CB5CF9F4DB8B4E6B0D2DBF362E58F669925E75856F14792E562E6DEFD6BDE"
+    },
+    {
+      "session": "1A20158F4B08F7FAADA8AF9733E7040A",
+      "dateUtc": "20261119-211502-838",
+      "mode": 2,
+      "seed": 359203,
+      "difficulty": 1,
+      "points": 6,
+      "aborted": false,
+      "device": "KeyboardMouse",
+      "durationSeconds": 30.00362179800868,
+      "samples": 1659,
+      "historySHA256": "1E05494B7719B0C80F1DFBA87C2E1EE9997CB69DD2CB7469217AE9243DB1DE48",
+      "traceSHA256": "DDC8F40E3B9EDB85A25EA6AA578104439EC3D32074EBFE5E661A0D8BF7987119"
+    }
+  ]
+}

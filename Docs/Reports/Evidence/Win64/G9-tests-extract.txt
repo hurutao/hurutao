@@ -1,0 +1,9 @@
+LogCsvProfiler: Display: Metadata set : commandline="" "C:\Users\Administrator\Documents\Unreal Projects\FPSArena\FPSArena.uproject" -BTGSmoke -ExecCmds="Automation RunTests FPSArena" -TestExit="Automation Test Queue Empty" -NullRHI -NoSound -Unattended -abslog="C:\Users\Administrator\Documents\Unreal Projects\FPSArena\Saved\Logs\G9-tests.log"""
+LogInit: Command Line: -BTGSmoke -ExecCmds="Automation RunTests FPSArena" -TestExit="Automation Test Queue Empty" -NullRHI -NoSound -Unattended -abslog="C:\Users\Administrator\Documents\Unreal Projects\FPSArena\Saved\Logs\G9-tests.log"
+[2026.11.19-14.39.31:266][300]LogAutomationController: Display: Test Completed. Result={Success} Name={DualSenseReports} Path={FPSArena.Input.DualSenseReports}
+[2026.11.19-14.39.31:315][303]LogAutomationController: Display: Test Completed. Result={Success} Name={ProfileRecovery} Path={FPSArena.Input.ProfileRecovery}
+[2026.11.19-14.39.31:365][306]LogAutomationController: Display: Test Completed. Result={Success} Name={SettingsAndFrameRate} Path={FPSArena.Input.SettingsAndFrameRate}
+[2026.11.19-14.39.31:402][308]LogAutomationController: Display: Test Completed. Result={Success} Name={RoundLifecycle} Path={FPSArena.Training.RoundLifecycle}
+[2026.11.19-14.39.31:449][311]LogAutomationController: Display: Test Completed. Result={Success} Name={TrackingRules} Path={FPSArena.Training.TrackingRules}
+[2026.11.19-14.39.31:451][311]LogAutomationCommandLine: Display: ...Automation Test Queue Empty 5 tests performed.
+[2026.11.19-14.39.31:451][312]LogExit: Display: **** TestExit: Automation Test Queue Empty ****
