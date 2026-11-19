@@ -1,0 +1,1504 @@
+{
+  "scope": "PE imports and delay-load references from DLLs and executables in the final ZIP, excludes installer. SDK optional paths included.",
+  "modules": 16,
+  "relationships": 299,
+  "vcRedistSignature": "Valid",
+  "vcRedistPublisher": "Microsoft Corporation",
+  "imports": [
+    {
+      "module": "FPSArena.exe",
+      "import": "ADVAPI32.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "FPSArena.exe",
+      "import": "KERNEL32.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "FPSArena.exe",
+      "import": "SHELL32.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "FPSArena.exe",
+      "import": "SHLWAPI.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "FPSArena.exe",
+      "import": "USER32.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "FPSArena.exe",
+      "import": "VERSION.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "dbghelp.dll",
+      "import": "api-ms-win-core-com-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "dbghelp.dll",
+      "import": "api-ms-win-core-debug-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "dbghelp.dll",
+      "import": "api-ms-win-core-errorhandling-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "dbghelp.dll",
+      "import": "api-ms-win-core-file-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "dbghelp.dll",
+      "import": "api-ms-win-core-handle-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "dbghelp.dll",
+      "import": "api-ms-win-core-heap-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "dbghelp.dll",
+      "import": "api-ms-win-core-interlocked-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "dbghelp.dll",
+      "import": "api-ms-win-core-io-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "dbghelp.dll",
+      "import": "api-ms-win-core-libraryloader-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "dbghelp.dll",
+      "import": "api-ms-win-core-localization-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "dbghelp.dll",
+      "import": "api-ms-win-core-localregistry-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "dbghelp.dll",
+      "import": "api-ms-win-core-memory-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "dbghelp.dll",
+      "import": "api-ms-win-core-misc-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "dbghelp.dll",
+      "import": "api-ms-win-core-processenvironment-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "dbghelp.dll",
+      "import": "api-ms-win-core-processthreads-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "dbghelp.dll",
+      "import": "api-ms-win-core-profile-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "dbghelp.dll",
+      "import": "api-ms-win-core-rtlsupport-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "dbghelp.dll",
+      "import": "api-ms-win-core-string-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "dbghelp.dll",
+      "import": "api-ms-win-core-synch-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "dbghelp.dll",
+      "import": "api-ms-win-core-sysinfo-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "dbghelp.dll",
+      "import": "api-ms-win-core-sysinfo-l1-2-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "dbghelp.dll",
+      "import": "api-ms-win-core-threadpool-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "dbghelp.dll",
+      "import": "api-ms-win-core-util-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "dbghelp.dll",
+      "import": "api-ms-win-crt-locale-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "dbghelp.dll",
+      "import": "api-ms-win-crt-private-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "dbghelp.dll",
+      "import": "api-ms-win-crt-runtime-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "dbghelp.dll",
+      "import": "api-ms-win-crt-string-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "dbghelp.dll",
+      "import": "api-ms-win-crt-time-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "dbghelp.dll",
+      "import": "api-ms-win-downlevel-kernel32-l2-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "dbghelp.dll",
+      "import": "api-ms-win-eventing-provider-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "dbghelp.dll",
+      "import": "api-ms-win-security-base-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "dbghelp.dll",
+      "import": "ntdll.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "dbghelp.dll",
+      "import": "OLEAUT32.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "dbghelp.dll",
+      "import": "RPCRT4.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "msquic.dll",
+      "import": "ADVAPI32.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "msquic.dll",
+      "import": "api-ms-win-crt-convert-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "msquic.dll",
+      "import": "api-ms-win-crt-environment-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "msquic.dll",
+      "import": "api-ms-win-crt-filesystem-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "msquic.dll",
+      "import": "api-ms-win-crt-heap-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "msquic.dll",
+      "import": "api-ms-win-crt-runtime-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "msquic.dll",
+      "import": "api-ms-win-crt-stdio-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "msquic.dll",
+      "import": "api-ms-win-crt-string-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "msquic.dll",
+      "import": "api-ms-win-crt-time-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "msquic.dll",
+      "import": "api-ms-win-crt-utility-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "msquic.dll",
+      "import": "bcrypt.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "msquic.dll",
+      "import": "CRYPT32.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "msquic.dll",
+      "import": "IPHLPAPI.DLL",
+      "location": "installed on test host"
+    },
+    {
+      "module": "msquic.dll",
+      "import": "KERNEL32.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "msquic.dll",
+      "import": "ncrypt.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "msquic.dll",
+      "import": "ntdll.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "msquic.dll",
+      "import": "USER32.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "msquic.dll",
+      "import": "WINMM.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "msquic.dll",
+      "import": "WS2_32.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "GFSDK_Aftermath_Lib.x64.dll",
+      "import": "ADVAPI32.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "GFSDK_Aftermath_Lib.x64.dll",
+      "import": "KERNEL32.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "GFSDK_Aftermath_Lib.x64.dll",
+      "import": "ole32.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "GFSDK_Aftermath_Lib.x64.dll",
+      "import": "OLEAUT32.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "GFSDK_Aftermath_Lib.x64.dll",
+      "import": "USER32.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "GFSDK_Aftermath_Lib.x64.dll",
+      "import": "VERSION.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "libogg_64.dll",
+      "import": "api-ms-win-crt-heap-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "libogg_64.dll",
+      "import": "api-ms-win-crt-runtime-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "libogg_64.dll",
+      "import": "KERNEL32.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "libogg_64.dll",
+      "import": "VCRUNTIME140.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "steam_api64.dll",
+      "import": "ADVAPI32.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "steam_api64.dll",
+      "import": "KERNEL32.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "steam_api64.dll",
+      "import": "SHELL32.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "libvorbis_64.dll",
+      "import": "api-ms-win-crt-heap-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "libvorbis_64.dll",
+      "import": "api-ms-win-crt-math-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "libvorbis_64.dll",
+      "import": "api-ms-win-crt-runtime-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "libvorbis_64.dll",
+      "import": "api-ms-win-crt-string-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "libvorbis_64.dll",
+      "import": "api-ms-win-crt-utility-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "libvorbis_64.dll",
+      "import": "KERNEL32.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "libvorbis_64.dll",
+      "import": "libogg_64.dll",
+      "location": "bundled"
+    },
+    {
+      "module": "libvorbis_64.dll",
+      "import": "VCRUNTIME140.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "libvorbisfile_64.dll",
+      "import": "api-ms-win-crt-heap-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "libvorbisfile_64.dll",
+      "import": "api-ms-win-crt-runtime-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "libvorbisfile_64.dll",
+      "import": "api-ms-win-crt-stdio-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "libvorbisfile_64.dll",
+      "import": "KERNEL32.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "libvorbisfile_64.dll",
+      "import": "libogg_64.dll",
+      "location": "bundled"
+    },
+    {
+      "module": "libvorbisfile_64.dll",
+      "import": "libvorbis_64.dll",
+      "location": "bundled"
+    },
+    {
+      "module": "libvorbisfile_64.dll",
+      "import": "VCRUNTIME140.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "xaudio2_9redist.dll",
+      "import": "ADVAPI32.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "xaudio2_9redist.dll",
+      "import": "AVRT.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "xaudio2_9redist.dll",
+      "import": "KERNEL32.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "xaudio2_9redist.dll",
+      "import": "MMDevAPI.DLL",
+      "location": "installed on test host"
+    },
+    {
+      "module": "xaudio2_9redist.dll",
+      "import": "ole32.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "xaudio2_9redist.dll",
+      "import": "VERSION.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "onnxruntime.dll",
+      "import": "ADVAPI32.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "onnxruntime.dll",
+      "import": "api-ms-win-core-path-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "onnxruntime.dll",
+      "import": "api-ms-win-crt-convert-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "onnxruntime.dll",
+      "import": "api-ms-win-crt-filesystem-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "onnxruntime.dll",
+      "import": "api-ms-win-crt-heap-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "onnxruntime.dll",
+      "import": "api-ms-win-crt-locale-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "onnxruntime.dll",
+      "import": "api-ms-win-crt-math-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "onnxruntime.dll",
+      "import": "api-ms-win-crt-runtime-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "onnxruntime.dll",
+      "import": "api-ms-win-crt-stdio-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "onnxruntime.dll",
+      "import": "api-ms-win-crt-string-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "onnxruntime.dll",
+      "import": "api-ms-win-crt-time-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "onnxruntime.dll",
+      "import": "d3d12.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "onnxruntime.dll",
+      "import": "dbghelp.dll",
+      "location": "bundled"
+    },
+    {
+      "module": "onnxruntime.dll",
+      "import": "DirectML.dll",
+      "location": "bundled"
+    },
+    {
+      "module": "onnxruntime.dll",
+      "import": "dxgi.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "onnxruntime.dll",
+      "import": "KERNEL32.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "onnxruntime.dll",
+      "import": "MSVCP140_1.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "onnxruntime.dll",
+      "import": "MSVCP140.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "onnxruntime.dll",
+      "import": "SETUPAPI.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "onnxruntime.dll",
+      "import": "VCRUNTIME140_1.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "onnxruntime.dll",
+      "import": "VCRUNTIME140.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "ADVAPI32.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "api-ms-win-core-synch-l1-2-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "api-ms-win-crt-conio-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "api-ms-win-crt-convert-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "api-ms-win-crt-environment-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "api-ms-win-crt-filesystem-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "api-ms-win-crt-heap-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "api-ms-win-crt-locale-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "api-ms-win-crt-math-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "api-ms-win-crt-multibyte-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "api-ms-win-crt-runtime-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "api-ms-win-crt-stdio-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "api-ms-win-crt-string-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "api-ms-win-crt-time-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "api-ms-win-crt-utility-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "api-ms-win-shcore-scaling-l1-1-1.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "bcrypt.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "CRYPT32.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "d3d11.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "d3d12.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "dbghelp.dll",
+      "location": "bundled"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "DirectML.dll",
+      "location": "bundled"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "DSOUND.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "dwmapi.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "dxgi.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "GDI32.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "GFSDK_Aftermath_Lib.x64.dll",
+      "location": "bundled"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "HID.DLL",
+      "location": "installed on test host"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "IMM32.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "IPHLPAPI.DLL",
+      "location": "installed on test host"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "KERNEL32.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "libvorbis_64.dll",
+      "location": "bundled"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "libvorbisfile_64.dll",
+      "location": "bundled"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "MF.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "MFPlat.DLL",
+      "location": "installed on test host"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "MFReadWrite.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "MSVCP140.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "ole32.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "OLEAUT32.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "OPENGL32.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "SETUPAPI.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "SHELL32.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "SHLWAPI.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "steam_api64.dll",
+      "location": "bundled"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "tbs.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "UIAutomationCore.DLL",
+      "location": "installed on test host"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "USER32.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "UxTheme.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "VCRUNTIME140_1.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "VCRUNTIME140.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "VERSION.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "WINHTTP.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "WINMM.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "WS2_32.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "XAudio2_9.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "FPSArena-Win64-Shipping.exe",
+      "import": "XINPUT1_4.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "tbb12.dll",
+      "import": "api-ms-win-crt-environment-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "tbb12.dll",
+      "import": "api-ms-win-crt-heap-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "tbb12.dll",
+      "import": "api-ms-win-crt-math-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "tbb12.dll",
+      "import": "api-ms-win-crt-runtime-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "tbb12.dll",
+      "import": "api-ms-win-crt-stdio-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "tbb12.dll",
+      "import": "api-ms-win-crt-string-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "tbb12.dll",
+      "import": "KERNEL32.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "tbb12.dll",
+      "import": "MSVCP140.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "tbb12.dll",
+      "import": "VCRUNTIME140_1.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "tbb12.dll",
+      "import": "VCRUNTIME140.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "tbbmalloc.dll",
+      "import": "api-ms-win-crt-convert-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "tbbmalloc.dll",
+      "import": "api-ms-win-crt-environment-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "tbbmalloc.dll",
+      "import": "api-ms-win-crt-heap-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "tbbmalloc.dll",
+      "import": "api-ms-win-crt-runtime-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "tbbmalloc.dll",
+      "import": "api-ms-win-crt-stdio-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "tbbmalloc.dll",
+      "import": "api-ms-win-crt-string-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "tbbmalloc.dll",
+      "import": "KERNEL32.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "tbbmalloc.dll",
+      "import": "VCRUNTIME140_1.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "tbbmalloc.dll",
+      "import": "VCRUNTIME140.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-core-apiquery-l2-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-core-com-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-core-console-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-core-debug-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-core-errorhandling-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-core-fibers-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-core-file-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-core-file-l1-2-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-core-file-l1-2-2.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-core-file-l2-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-core-handle-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-core-heap-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-core-heap-l2-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-core-interlocked-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-core-libraryloader-l1-2-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-core-libraryloader-l1-2-1.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-core-localization-l1-2-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-core-memory-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-core-memory-l1-1-1.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-core-processenvironment-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-core-processthreads-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-core-processthreads-l1-1-1.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-core-processthreads-l1-1-3.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-core-profile-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-core-psapi-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-core-quirks-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-core-registry-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-core-registry-l2-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-core-rtlsupport-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-core-string-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-core-synch-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-core-synch-l1-2-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-core-sysinfo-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-core-sysinfo-l1-2-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-core-threadpool-l1-2-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-core-timezone-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-core-util-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-core-version-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-core-version-l1-1-1.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-core-windowserrorreporting-l1-1-1.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-core-wow64-l1-1-1.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-eventing-provider-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-security-base-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-security-lsalookup-ansi-l2-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "api-ms-win-service-management-l2-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "dxgi.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "ext-ms-win-dx-d3dkmt-dxcore-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "ext-ms-win-dx-d3dkmt-dxcore-l1-1-1.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "ext-ms-win-dx-d3dkmt-dxcore-l1-1-3.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "ext-ms-win-dx-d3dkmt-dxcore-l1-1-4.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "ext-ms-win-dx-d3dkmt-dxcore-l1-1-5.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "ext-ms-win-dxcore-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "ext-ms-win-ntuser-uicontext-ext-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "ext-ms-win-wer-reporting-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "D3D12Core.dll",
+      "import": "ntdll.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "d3d12SDKLayers.dll",
+      "import": "api-ms-win-core-com-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "d3d12SDKLayers.dll",
+      "import": "api-ms-win-core-console-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "d3d12SDKLayers.dll",
+      "import": "api-ms-win-core-console-l2-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "d3d12SDKLayers.dll",
+      "import": "api-ms-win-core-debug-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "d3d12SDKLayers.dll",
+      "import": "api-ms-win-core-errorhandling-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "d3d12SDKLayers.dll",
+      "import": "api-ms-win-core-fibers-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "d3d12SDKLayers.dll",
+      "import": "api-ms-win-core-file-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "d3d12SDKLayers.dll",
+      "import": "api-ms-win-core-handle-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "d3d12SDKLayers.dll",
+      "import": "api-ms-win-core-heap-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "d3d12SDKLayers.dll",
+      "import": "api-ms-win-core-heap-l2-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "d3d12SDKLayers.dll",
+      "import": "api-ms-win-core-interlocked-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "d3d12SDKLayers.dll",
+      "import": "api-ms-win-core-libraryloader-l1-2-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "d3d12SDKLayers.dll",
+      "import": "api-ms-win-core-localization-l1-2-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "d3d12SDKLayers.dll",
+      "import": "api-ms-win-core-memory-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "d3d12SDKLayers.dll",
+      "import": "api-ms-win-core-processenvironment-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "d3d12SDKLayers.dll",
+      "import": "api-ms-win-core-processthreads-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "d3d12SDKLayers.dll",
+      "import": "api-ms-win-core-processthreads-l1-1-1.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "d3d12SDKLayers.dll",
+      "import": "api-ms-win-core-profile-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "d3d12SDKLayers.dll",
+      "import": "api-ms-win-core-registry-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "d3d12SDKLayers.dll",
+      "import": "api-ms-win-core-rtlsupport-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "d3d12SDKLayers.dll",
+      "import": "api-ms-win-core-string-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "d3d12SDKLayers.dll",
+      "import": "api-ms-win-core-synch-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "d3d12SDKLayers.dll",
+      "import": "api-ms-win-core-synch-l1-2-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "d3d12SDKLayers.dll",
+      "import": "api-ms-win-core-sysinfo-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "d3d12SDKLayers.dll",
+      "import": "api-ms-win-core-threadpool-l1-2-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "d3d12SDKLayers.dll",
+      "import": "api-ms-win-core-util-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "d3d12SDKLayers.dll",
+      "import": "api-ms-win-eventing-provider-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "d3d12SDKLayers.dll",
+      "import": "d3d12.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "d3d12SDKLayers.dll",
+      "import": "ntdll.dll",
+      "location": "installed on test host"
+    },
+    {
+      "module": "DirectML.dll",
+      "import": "api-ms-win-appmodel-runtime-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "DirectML.dll",
+      "import": "api-ms-win-core-console-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "DirectML.dll",
+      "import": "api-ms-win-core-datetime-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "DirectML.dll",
+      "import": "api-ms-win-core-debug-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "DirectML.dll",
+      "import": "api-ms-win-core-errorhandling-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "DirectML.dll",
+      "import": "api-ms-win-core-fibers-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "DirectML.dll",
+      "import": "api-ms-win-core-file-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "DirectML.dll",
+      "import": "api-ms-win-core-handle-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "DirectML.dll",
+      "import": "api-ms-win-core-heap-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "DirectML.dll",
+      "import": "api-ms-win-core-interlocked-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "DirectML.dll",
+      "import": "api-ms-win-core-libraryloader-l1-2-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "DirectML.dll",
+      "import": "api-ms-win-core-libraryloader-l1-2-1.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "DirectML.dll",
+      "import": "api-ms-win-core-localization-l1-2-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "DirectML.dll",
+      "import": "api-ms-win-core-memory-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "DirectML.dll",
+      "import": "api-ms-win-core-processenvironment-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "DirectML.dll",
+      "import": "api-ms-win-core-processthreads-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "DirectML.dll",
+      "import": "api-ms-win-core-processthreads-l1-1-1.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "DirectML.dll",
+      "import": "api-ms-win-core-profile-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "DirectML.dll",
+      "import": "api-ms-win-core-rtlsupport-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "DirectML.dll",
+      "import": "api-ms-win-core-string-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "DirectML.dll",
+      "import": "api-ms-win-core-synch-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "DirectML.dll",
+      "import": "api-ms-win-core-sysinfo-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "DirectML.dll",
+      "import": "api-ms-win-core-timezone-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "DirectML.dll",
+      "import": "api-ms-win-core-util-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "DirectML.dll",
+      "import": "api-ms-win-eventing-provider-l1-1-0.dll",
+      "location": "Windows API set"
+    },
+    {
+      "module": "DirectML.dll",
+      "import": "d3d12.dll",
+      "location": "installed on test host"
+    }
+  ]
+}

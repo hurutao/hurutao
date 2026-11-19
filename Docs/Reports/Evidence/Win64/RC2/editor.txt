@@ -1,0 +1,4 @@
+Building FPSArenaEditor...
+[1/5] Compile [x64] ForgePadTests.cpp
+[2/5] Compile [x64] ForgeStorage.cpp
+Result: Succeeded

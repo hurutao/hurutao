@@ -2,12 +2,14 @@
 
 2026 年 11 月 20 日。Windows x64 离线发行候选包通过本机功能、存档和性能验收。Steam 商业发行仍待平台权限验证与实体手柄签收。
 
-## 交付物
+当前版本为 RC2，已修复异常存档写入和历史记录筛选。更新后的下载入口、校验值与跨版本复测记录见 [G9 存档修订验收](Milestone_G9_RC2.md)。以下为 RC1 基线记录。
+
+## RC1 交付物
 
 | 文件 | 内容 |
 |---|---|
-| [Windows 玩家包](../../交付/BeastTrainingGrounds-Win64-Shipping.zip) | 完整解压后运行顶层 `FPSArena.exe`。47 个文件，343,176,129 字节，约 327.28 MiB。包含中文使用说明、运行库安装程序、素材来源和第三方许可。 |
-| [SHA-256](../../交付/BeastTrainingGrounds-Win64-Shipping.zip.sha256) | `87aab879341bbe95e1541cdb7095a809142eae6b2c4ab158f9675c0ccf134017` |
+| [Windows 玩家包](../../交付/RC1/BeastTrainingGrounds-Win64-Shipping.zip) | 完整解压后运行顶层 `FPSArena.exe`。47 个文件，343,176,129 字节，约 327.28 MiB。包含中文使用说明、运行库安装程序、素材来源和第三方许可。 |
+| [SHA-256](../../交付/RC1/BeastTrainingGrounds-Win64-Shipping.zip.sha256) | `87aab879341bbe95e1541cdb7095a809142eae6b2c4ab158f9675c0ccf134017` |
 | [包清单与校验记录](Evidence/Win64/package.json) | ZIP 所有条目的 CRC 校验通过，两级可执行文件的 SHA-256 与 UAT 暂存文件一致。 |
 
 ## 里程碑记录

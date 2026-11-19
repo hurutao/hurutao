@@ -1,0 +1,81 @@
+{
+  "verification": "Windows Shipping RC1 → RC2 → RC1, normal game windows, keyboard automation, isolated user directory",
+  "order": [
+    "RC1 write",
+    "RC2 replay from RC1",
+    "RC2 new seed",
+    "RC1 replay from RC2"
+  ],
+  "profiles": [
+    165,
+    180,
+    195
+  ],
+  "binaryHashes": {
+    "RC1": "E45718D85EBF6C4082E63A05BA065494A7A7F10CB554143A75E5801B7663F048",
+    "RC2": "1ECE4A70D30D15D3E5AB2C4C814192D0D5DBE14BD71467A6AC0C7A95161419DB"
+  },
+  "protectedWorkshopSHA256": "87C13B5D3ABB964A9E9CFBBAAAC27EB1EAD6D727CBD7FED5CE95D16C10A22770",
+  "unchangedOriginRecordsAndTraces": [
+    "C57073C6461E3DB34127C0825308611C",
+    "055A856C4BE0DAB3139D10B556FA855B"
+  ],
+  "RC2negativeFixtures": [
+    "newer schema",
+    "fractional mode in schema 1"
+  ],
+  "allSessions": [
+    {
+      "session": "C57073C6461E3DB34127C0825308611C",
+      "dateUtc": "20261119-213113-883",
+      "mode": 2,
+      "difficulty": 1,
+      "seed": 273690,
+      "points": 6,
+      "aborted": false,
+      "combat": false,
+      "historySHA256": "AC08D7B543F30157B45E4344A06EC9C09660A657FD01235B38B8B38442410EE6",
+      "traceSHA256": "0769E84D16790A51013A2040F076CDEFB8E7E405DBA2C7A9ACBE36DBEFB2C622",
+      "traceSamples": 1663
+    },
+    {
+      "session": "185C92974C5E7897FAE18ABAE7F4C29C",
+      "dateUtc": "20261119-214747-850",
+      "mode": 2,
+      "difficulty": 1,
+      "seed": 273690,
+      "points": 6,
+      "aborted": false,
+      "combat": false,
+      "historySHA256": "08F93978B2730BC7D2539F4FE6C9C6C7D44439961D8C40AF6A1D928A8A288B1D",
+      "traceSHA256": "CFE60CAA154D2510DABFA8B2BEDD49975D01DDCDEF54D92055B9108E4E1AB9C4",
+      "traceSamples": 1618
+    },
+    {
+      "session": "055A856C4BE0DAB3139D10B556FA855B",
+      "dateUtc": "20261119-214827-774",
+      "mode": 3,
+      "difficulty": 1,
+      "seed": 806573,
+      "points": 9,
+      "aborted": false,
+      "combat": false,
+      "historySHA256": "94D768FF7023655F92D59DBBF3F714D7A9AF1AF6A07FA9B39DF4304D4148B6B4",
+      "traceSHA256": "F37EEA1CD00478EAB6171536B38E909D56A301C0F6A58718E4723563F547D00F",
+      "traceSamples": 1607
+    },
+    {
+      "session": "1678EA1B49C08B38BA693093E985FC42",
+      "dateUtc": "20261119-215016-289",
+      "mode": 3,
+      "difficulty": 1,
+      "seed": 806573,
+      "points": 9,
+      "aborted": false,
+      "combat": false,
+      "historySHA256": "A904E17D2934FEF8D83BC0A8FE53F2504EFCFEE68CA93B5093B0C21AD52BFE68",
+      "traceSHA256": "E914429F5A6641094C97D0C0719C4B5A3D21E2F1433BF05BD60D43D30C12E5ED",
+      "traceSamples": 1623
+    }
+  ]
+}
