@@ -40,3 +40,8 @@ P1 仍未完成，不能进入 P2。下一轮需要先解决工程 GUI 启动路
 
 Xbox 已在仅连接 Xbox One 控制器的条件下产生真实 CSV，摇杆 X/Y 均在 [-1,1]，LT/RT 在 [0.007843,1.0]，相邻样本大跳变检查为 0 次。径向死区修正后尚需复采。DualSense 动作序列已执行，但对应运行窗口没有产生回调或 CSV，状态为 BLOCKED。详细分析见 Evidence/P1/InputPrecisionValidation/P1_Hardware_Analysis.md。
 
+
+## DualSense 输入故障诊断补充
+
+Windows PnP 可识别 DualSense，但 UE 日志只注册 XInputInterface::XInputController，没有注册 DualSense 游戏输入设备。当前 Gamepad_* Enhanced Input 映射因此只能驱动 Xbox/XInput。DualSense 状态为 Windows PASS、当前 UE 映射 FAIL、采样 BLOCKED。证据见 Evidence/P1/InputPrecisionValidation/DualSense_diagnosis.md。
+
