@@ -25,3 +25,8 @@ P1 仍未完成，不能进入 P2。下一轮需要先解决工程 GUI 启动路
 
 已建立隔离 P1 Enhanced Input 采样工具，未修改正式玩法。基础手柄控制为 HUMAN-VERIFIED，输入精度自动化采样仍为 UNVERIFIED。没有开发正式场景、角色、武器、怪物或训练玩法。
 
+
+## ea421a1 工具审计补充
+
+指定提交 a421a1 包含采样器源码和 CSV 模板，但缺少可运行 UE 工程入口，且其 Get<FVector3f>() 调用无法通过 UE 5.9 编译。因此该提交不能标记为可运行工具。后续隔离工程已修正并通过 UBT 编译，但没有真实 Xbox/DualSense 运行时采样，输入精度、死区、重复输入、中心漂移和异常跳变均保持 UNVERIFIED。证据见 Evidence/P1/InputPrecisionValidation/ea421a1_audit.md。
+
