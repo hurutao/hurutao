@@ -1,0 +1,16 @@
+P1 remaining validation evidence 2026-11-20
+Task 1 GUI:
+- CUA launched C:\Program Files\Epic Games\UE_5.9\Engine\Binaries\Win64\UnrealEditor.exe.
+- Window observed as 虚幻编辑器 / UnrealEditor.exe.
+- CUA screenshot channel timed out and the bare editor window did not expose a usable project-open accessibility control.
+- CUA sent Alt+F4. Subsequent Windows window inventory contained no UE_5.9 window. Standalone editor start/close PASS. Opening the FPSArena.uproject through this GUI path BLOCKED.
+Task 2 devices:
+- Windows PnP reports OK Xbox One 控制器, USB VID_045E PID_0B00.
+- Windows PnP reports OK DualSense Edge Wireless Controller, USB VID_054C PID_0DF2.
+- Also reports Nefarius Virtual Gamepad Emulation Bus. This is a virtual device and is excluded from physical-device acceptance.
+- No Unreal Enhanced Input axis/button samples were captured because the P1 project could not be opened through the available GUI path. UE hardware sampling BLOCKED, not simulated.
+Task 3 GitHub:
+- git remote -v returned no remotes.
+- branch master points to commit 410b06d locally.
+- Git LFS 3.8.1 installed and local filter/storage configuration is valid.
+- Remote read/write permission and push status BLOCKED because no Beast-Training-Grounds remote URL or authenticated remote is configured. No push or history rewrite attempted.
