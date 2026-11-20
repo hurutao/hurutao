@@ -9,9 +9,9 @@
 | Unreal Editor 独立图形启动 | PASS | CUA 窗口清单观察到 `UnrealEditor.exe` |
 | Unreal Editor 独立图形关闭 | PASS | `Alt+F4` 后 UE 窗口从清单消失 |
 | 通过 GUI 打开 FPSArena P1 工程 | BLOCKED | CUA 截图通道超时，窗口无可用项目打开控件 |
-| Xbox 实体设备存在 | PASS | Windows PnP `Xbox One 控制器`，USB `VID_045E&PID_0B00` |
-| DualSense 实体设备存在 | PASS | Windows PnP `DualSense Edge Wireless Controller`，USB `VID_054C&PID_0DF2` |
-| UE Enhanced Input 轴/扳机/按键读取 | BLOCKED | 工程未能通过 GUI 路径打开，未使用模拟输入 |
+| Xbox 基础控制 | HUMAN-VERIFIED | 项目负责人已人工确认可以正常控制游戏，尚无自动化采样日志 |
+| DualSense 基础控制 | HUMAN-VERIFIED | 项目负责人已人工确认可以正常控制游戏，尚无自动化采样日志 |
+| UE Enhanced Input 精度采样 | UNVERIFIED | 已建立隔离采样工具，但尚无真实逐帧 CSV |
 | GitHub Beast-Training-Grounds remote | BLOCKED | `git remote -v` 无输出 |
 | GitHub 读写权限 | BLOCKED | 无远程地址和认证目标 |
 | 本地 P1 提交 | PASS | `410b06d` |
@@ -23,4 +23,5 @@
 
 P1 仍未完成，不能进入 P2。下一轮需要先解决工程 GUI 启动路径或使用经批准的编辑器启动方式，再完成两类实体控制器的 UE 输入采样。GitHub 需要项目负责人提供或配置 Beast-Training-Grounds 私有仓库 remote 后，才能验证权限和推送状态。
 
-没有开发正式场景、角色、武器、怪物或训练玩法。
+已建立隔离 P1 Enhanced Input 采样工具，未修改正式玩法。基础手柄控制为 HUMAN-VERIFIED，输入精度自动化采样仍为 UNVERIFIED。没有开发正式场景、角色、武器、怪物或训练玩法。
+

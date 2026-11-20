@@ -1,0 +1,3 @@
+device,connection,action,timestamp_seconds,raw_x,raw_y,raw_z,processed_x,processed_y,processed_z,axial_x,axial_y,radial_x,radial_y,button_state,duplicate_count,raw_layer_status
+Xbox,USB,,,,,,,,,,,,,,,UNVERIFIED
+DualSense,USB,,,,,,,,,,,,,,,UNVERIFIED
