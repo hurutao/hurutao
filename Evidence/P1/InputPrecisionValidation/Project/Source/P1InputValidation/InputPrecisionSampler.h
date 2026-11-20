@@ -20,6 +20,7 @@ public:
     UPROPERTY(EditAnywhere, Category="P1 Input Validation") float AxialDeadZone = 0.12f;
     UPROPERTY(EditAnywhere, Category="P1 Input Validation") float RadialDeadZone = 0.12f;
 private:
+    void CreateRuntimeMapping();
     void BindInput();
     void OnLeftStick(const struct FInputActionValue& Value);
     void OnRightStick(const struct FInputActionValue& Value);
@@ -31,3 +32,5 @@ private:
     TSet<FString> ActionsThisFrame;
     int32 DuplicateCount = 0;
 };
+
+

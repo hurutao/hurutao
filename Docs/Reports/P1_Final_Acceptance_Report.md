@@ -30,3 +30,8 @@ P1 仍未完成，不能进入 P2。下一轮需要先解决工程 GUI 启动路
 
 指定提交 a421a1 包含采样器源码和 CSV 模板，但缺少可运行 UE 工程入口，且其 Get<FVector3f>() 调用无法通过 UE 5.9 编译。因此该提交不能标记为可运行工具。后续隔离工程已修正并通过 UBT 编译，但没有真实 Xbox/DualSense 运行时采样，输入精度、死区、重复输入、中心漂移和异常跳变均保持 UNVERIFIED。证据见 Evidence/P1/InputPrecisionValidation/ea421a1_audit.md。
 
+
+## 手柄采样工具运行时补充
+
+隔离工程已通过 UE 5.9 UBT 编译并在图形运行窗口中产生 P1_INPUT_SAMPLE 日志，CSV 写盘已验证。当前 CSV 的设备标签仍为 Unknown，且项目负责人尚未完成 Xbox/DualSense 动作序列，因此真实硬件精度、死区、中心漂移、异常跳变和重复映射仍为 BLOCKED/UNVERIFIED。
+

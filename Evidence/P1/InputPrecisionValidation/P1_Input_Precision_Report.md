@@ -48,3 +48,8 @@
 
 基础控制可以记录为 `HUMAN-VERIFIED`，但输入精度验收仍未完成。需要在隔离验证工程中运行工具并分别采集 Xbox、DualSense 的真实 CSV 后，才能判断死区、全行程、对角输入和重复映射。
 
+
+## 运行时工具验证
+
+后续隔离工程已真实启动并产生 P1_INPUT_SAMPLE 日志，CSV 写盘路径为 C:\P1InputValidation\Saved\P1InputSamples.csv。当前数据尚未按设备隔离，Xbox 和 DualSense 完整动作序列仍为 BLOCKED，不能据此完成硬件精度验收。
+
