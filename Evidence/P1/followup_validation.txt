@@ -1,0 +1,8 @@
+P1-B follow-up evidence 2026-11-20
+- Git identity: local user.name/user.email absent; global user.name/user.email absent. No commit attempted.
+- UE version command: UnrealEditor-Cmd -Version => UE 5.9.0-60351404+++UE5+Release-5.9.
+- MSVC: UBT discovered Visual Studio 18 Community MSVC 14.52.37029. UE 5.9 UBT completed FPSArenaEditor Development Win64 build with Result: Succeeded. This is practical compatibility evidence. UBT emitted caution that 14.52 is newer than preferred 14.50.35717.
+- Editor startup: FPSArena.log contains LogUnrealEdMisc Total Editor Startup Time and LogExit/Log file closed. A later unattended launch did not terminate reliably, so startup is PASS, clean command shutdown is UNVERIFIED for that invocation.
+- Python execution: UnrealEditor-Cmd -ExecutePythonScript executed p1_python_automation.py. First attempts exposed unsupported APIs and were corrected. Final log reports ENGINE_VERSION, CREATED, SAVED=True, READ=True, DELETED=True. Unreal log ends with LogExit and Log file closed.
+- Temporary asset path: /Game/P1_Temp_Automation/P1_Temp_DataAsset.P1_Temp_DataAsset. Final deletion check returned True.
+- Evidence files: python_automation.log, p1_python_automation.py, project Saved/Logs/FPSArena.log, UBT Log.txt.

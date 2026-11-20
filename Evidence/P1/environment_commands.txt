@@ -1,0 +1,13 @@
+P1-A command evidence captured 2026-11-20
+OS: Windows 10 Home China build 19045
+CPU: AMD Ryzen 7 5800H, 8 cores
+RAM: 17024741376 bytes total (~16.0 GiB), free physical memory at capture 7545892 KB
+GPU: NVIDIA GeForce RTX 3060 Laptop GPU, driver 32.0.16.2101; virtual display adapter also present
+Disk C: size 510821134336, free 349615267840 bytes
+UE: C:\Program Files\Epic Games\UE_5.9, UnrealEditor 5.9 CL 60351404, Editor-Cmd/UBT/RunUAT present
+UBT: Build.bat FPSArenaEditor Win64 Development ... -WaitMutex => Result: Succeeded
+UBT notes: MSVC 14.52.37029 newer than preferred 14.50.35717; Fab dependency warning
+Win64 SDK validation: VALID 10.0.26100.0
+Tools: git 2.56.0.windows.4; git-lfs 3.8.1; Python 3.11.9; dotnet 11.0.100; blender MISSING; cl not on ordinary PATH but UBT found VS toolchain
+Git: local repository exists, latest commit a1fd767, no remote configured in this checkout
+Editor automation attempt: UnrealEditor-Cmd with NullRHI/Unattended/Automation RunTests did not exit within bounded wait and was terminated. Result UNVERIFIED.
