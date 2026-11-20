@@ -1,0 +1,9 @@
+P1 isolated Enhanced Input sampler build evidence 2026-11-20
+Project source: Evidence/P1/InputPrecisionValidation/Project
+ASCII build path: C:\P1InputValidation
+Command:
+Build.bat P1InputValidationEditor Win64 Development -Project=C:\P1InputValidation\P1InputValidation.uproject -WaitMutex
+Result: Succeeded
+Toolchain: MSVC 14.52.37029, Windows SDK 10.0.26100.0, UE 5.9
+Note: the first build under the Chinese workspace path failed because the compiler could not open a PCH path. Rebuilding the same isolated source at ASCII path C:\P1InputValidation succeeded. No formal FPSArena source or gameplay was changed.
+Runtime hardware CSV: not collected in this build. Xbox/DualSense values remain UNVERIFIED.
