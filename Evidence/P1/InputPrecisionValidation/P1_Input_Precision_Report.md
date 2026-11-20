@@ -13,7 +13,7 @@
 
 ## 隔离工具
 
-已建立隔离工具目录 `Evidence/P1/InputPrecisionValidation`，包含 `InputPrecisionSampler.h/.cpp`、CSV 字段文件和使用说明。工具只记录 P1 验证数据，不接入正式角色、武器或训练玩法。
+已建立隔离工具目录 `Evidence/P1/InputPrecisionValidation`，包含 `InputPrecisionSampler.h/.cpp`、CSV 字段文件和使用说明。工具只记录 P1 验证数据，不接入正式角色、武器或训练玩法。源码已在 ASCII 路径 `C:\P1InputValidation` 通过 UE 5.9 UBT 编译，结果为 `Result: Succeeded`。
 
 ## 采样字段
 
@@ -47,3 +47,4 @@
 ## P1 结论
 
 基础控制可以记录为 `HUMAN-VERIFIED`，但输入精度验收仍未完成。需要在隔离验证工程中运行工具并分别采集 Xbox、DualSense 的真实 CSV 后，才能判断死区、全行程、对角输入和重复映射。
+

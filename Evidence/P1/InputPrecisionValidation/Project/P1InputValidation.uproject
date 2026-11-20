@@ -1,0 +1,6 @@
+{
+  "FileVersion": 3,
+  "EngineAssociation": "5.9",
+  "Modules": [{"Name":"P1InputValidation","Type":"Runtime","LoadingPhase":"Default","AdditionalDependencies":["Engine","EnhancedInput"]}],
+  "Plugins": [{"Name":"EnhancedInput","Enabled":true}]
+}
