@@ -172,7 +172,7 @@ FPSArena 已启用 `GameInputWindows`、`GameInput`，增加 `GameInputBase` 依
 - `github_get_repo_collaborator_permission`：`hurutao` 在 `hurutao/hurutao` 的权限为 `admin`。
 - `github_search_branches`：远程 `master` 分支存在。
 - 逐次调用结果已记录在 `Evidence/P1/InputPrecisionValidation/github_connector_verification_2026-11-22.md`。
-- 本地 Git CLI 已执行普通 `git push origin master`，远程 `master` 与本地提交一致；未使用强制推送。
+- 既有 P1 提交已通过普通 `git push origin master` 推送；本次报告更新时 Git CLI 重试遭遇 `Recv failure: Connection was reset`，因此使用已授权的 connector Contents API 将报告和证据文件以两个快进提交写入远程 `master`。未使用强制推送或覆盖远程历史。
 
 ### 最终状态
 
