@@ -67,3 +67,11 @@ DualSense 手柄接口使用 Windows 标准 HID/HidUsb 驱动。系统安装了 
 
 在 Steam 进程运行期间直接启动隔离 P1 工程，UE 没有注册 `XInputInterface::XInputController`，也没有产生采样回调。Steam Input 需要从 Steam 接管的非 Steam 游戏快捷方式启动该工程。证据见 Evidence/P1/InputPrecisionValidation/SteamInput_direct_launch_check_2026-11-22.md。
 
+## 非 DualSense 项复核
+
+Unreal MCP 服务已恢复并通过 `initialize` 握手，服务端为 `unreal-mcp`，UE 版本为 `5.9.0-60351404`，项目为 FPSArena。MCP 状态更新为 PASS。
+
+GitHub 连接器当前未登录，返回 `USER_NOT_LOGGED_IN`。本地仓库仍没有 `git remote`，因此 Beast-Training-Grounds 远程地址、读写权限和推送状态继续为 BLOCKED。不能凭空设置远程地址。
+
+Xbox CSV 缺少原始轴列的数值，现有文件只能验证处理后范围和跳变，不能从旧文件重新证明径向死区修正后的输出。径向死区复采继续为 UNVERIFIED。
+
