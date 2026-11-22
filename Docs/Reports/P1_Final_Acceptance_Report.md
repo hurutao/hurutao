@@ -100,10 +100,11 @@ Xbox CSV 缺少原始轴列的数值，现有文件只能验证处理后范围�
 | Xbox 中心漂移与重复输入 | PASS | 静止窗口原始偏移在径向死区内；修正逐帧重复计数后 `duplicate_count` 最大为 0 |
 | GitHub 远程存在性 | PASS（网页） | `https://github.com/hurutao/hurutao` 可打开，Public，默认分支 `main` |
 | GitHub Git CLI 读写权限 | PASS | dry-run 已被远程接受 |
-| GitHub 连接器登录、P1 推送 | BLOCKED / UNVERIFIED | 连接器仍 `USER_NOT_LOGGED_IN`；实际 push 尚未执行 |
-| P1 是否可进入 P2 | BLOCKED | GitHub 远程存在性、读写权限和 P1 推送仍未完成；P2 继续禁止进入 |
+| GitHub 连接器登录 | BLOCKED | 连接器仍返回 `USER_NOT_LOGGED_IN` |
+| GitHub Git CLI P1 推送 | PASS | 普通 `git push origin master` 成功，远程 master 与本地 HEAD 一致 |
+| P1 是否可进入 P2 | BLOCKED | GitHub 网页、Git CLI 读写和 P1 推送已完成；Codex GitHub connector 仍返回 `USER_NOT_LOGGED_IN` |
 
-DualSense 的 GameInput 接入层已恢复并通过运行日志验证，之前的 PS5 专用 Steam/HID 路径仍保持移除。项目仍停留在 P1，待实际事件采样、GitHub 远程核验和 Xbox 径向死区复采完成后，才可评估 P2。
+DualSense 的 GameInput 接入层已恢复并通过运行日志验证，之前的 PS5 专用 Steam/HID 路径仍保持移除。Xbox 自动化采样、GitHub 网页存在性、Git CLI 写权限和 P1 推送均已完成；项目仍停留在 P1，原因只剩 Codex GitHub connector 的 `USER_NOT_LOGGED_IN` 状态。
 
 ## Xbox 实体输入自动化复验（2026-11-22）
 
@@ -120,20 +121,20 @@ DualSense 的 GameInput 接入层已恢复并通过运行日志验证，之前�
 - `PASS`：GitHub `hurutao/hurutao` 网页存在性已确认，仓库为 Public，默认分支为 `main`；本地 `origin` 已更新为该准确地址。
 - `PASS`：Git CLI 对 `hurutao/hurutao` 的推送权限已通过 `git push --dry-run origin master` 验证，远程返回将创建 `master` 分支。
 - `BLOCKED`：GitHub 连接器账号连接仍返回 `USER_NOT_LOGGED_IN`。
-- `UNVERIFIED`：实际 P1 推送尚未执行；dry-run 没有上传文件，也没有改写远程历史。
+- `PASS`：项目负责人授权后已执行普通 `git push origin master`，远程 `master` 为 `63d1ab1e0deba0ea2e19d1e9ea118051fcfd15bb`，与本地 HEAD 一致。
 - `UNVERIFIED`：采样 CSV 的底层 `RawInput/HID` 原始层级和设备字段；这不影响本轮 XInput/Enhanced Input 处理链路的 Xbox 验证。
 
 P1 仍未完成，禁止进入 P2。下一步只剩项目负责人完成 GitHub 连接器登录或提供可访问的准确远程仓库后，复核远程存在性、读写权限和本地提交推送状态；完成后停止并等待项目负责人验收。
 
-本轮结束时本地 Git 已记录提交 `71bd2dd test: capture Xbox controller precision evidence` 和 `931484e docs: update P1 GitHub blocker status`，提交身份为 `local-user <local@localhost>`。提交尚未推送：本地 `origin` 已指向 `https://github.com/hurutao/hurutao.git`，但 `git ls-remote` 网络验证和 GitHub connector 认证仍未通过。
+本轮结束时本地 Git 已记录提交 `71bd2dd test: capture Xbox controller precision evidence`、`931484e docs: update P1 GitHub blocker status`、`000f0a7 docs: record verified GitHub repository address` 和 `63d1ab1 docs: verify GitHub push permission with dry run`，提交身份为 `local-user <local@localhost>`。这些提交已通过普通 `git push origin master` 推送到远程 `master`；Codex GitHub connector 认证仍未通过。
 
 ## 当前准确 GitHub 仓库复核（2026-11-22）
 
-项目负责人确认的准确地址为 `https://github.com/hurutao/hurutao`。网页可访问该仓库，页面显示仓库为 Public、默认分支为 `main`，当前页面可见历史为 1 个提交，因此仓库存在性状态更新为 `PASS（网页存在性）`。本地 `origin` 已按负责人提供的地址更新；该操作未推送任何文件。
+项目负责人确认的准确地址为 `https://github.com/hurutao/hurutao`。网页可访问该仓库，页面显示仓库为 Public、默认分支为 `main`，当前页面可见历史为 1 个提交，因此仓库存在性状态更新为 `PASS（网页存在性）`。本地 `origin` 已按负责人提供的地址更新，随后已将本地 `master` 分支推送到远程；实际推送证据见 `Evidence/P1/InputPrecisionValidation/github_push_2026-11-22.md`。
 
 GitHub 连接器调用仍返回 `USER_NOT_LOGGED_IN`，本机对该地址执行 `git ls-remote` 曾在 `github.com:443` 超时。网页公开可读本身不等于写权限；随后 Git CLI dry-run 已单独验证写权限，但实际 P1 推送仍未执行，连接器登录仍未完成。
 
-补充验证：`git push --dry-run origin master` 已成功返回 `new branch master -> master`，因此 Git CLI 写权限更新为 `PASS`。该命令没有实际推送；连接器登录仍为 `BLOCKED`，实际 P1 推送仍为 `UNVERIFIED`。
+补充验证：先通过 `git push --dry-run origin master` 验证写权限，随后在项目负责人明确授权后执行普通 `git push origin master`。远程 `master` 已与本地 HEAD `63d1ab1e0deba0ea2e19d1e9ea118051fcfd15bb` 一致，实际 P1 推送更新为 `PASS`。连接器登录仍为 `BLOCKED`，证据见 `Evidence/P1/InputPrecisionValidation/github_push_2026-11-22.md`。
 
 ## DualSense GameInput 修复复核（2026-11-22）
 
