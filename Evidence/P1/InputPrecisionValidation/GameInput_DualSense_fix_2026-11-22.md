@@ -59,6 +59,7 @@ LogInputDeviceProperties: Input device connection change: NewState=EInputDeviceC
 | DualSense Edge VID/PID 识别 | PASS | `054C:0DF2` 已连接 |
 | 轴和按键映射初始化 | PASS | 6 个轴、12 个按键 |
 | 实际摇杆、扳机、按键基础控制 | HUMAN-VERIFIED | 项目负责人确认 DualSense 已可控制 FPSArena 画面 |
+| 左右摇杆方向 | HUMAN-VERIFIED | 项目负责人确认左右摇杆方向均正常 |
 | 自动化逐帧轴/按键 CSV | UNVERIFIED | 当前修复日志尚未包含逐帧采样文件 |
 | Steam、DS4Windows、reWASD 重复映射 | PASS（本轮进程检查） | 未发现运行中的接管进程 |
 
@@ -66,4 +67,4 @@ LogInputDeviceProperties: Input device connection change: NewState=EInputDeviceC
 
 项目负责人随后在前台运行窗口确认 DualSense 已恢复控制 FPSArena 画面。该结果记录为 `HUMAN-VERIFIED`，不替代自动化逐帧 CSV。
 
-针对左右摇杆方向问题，已将 FPSArena 的 `Gamepad_LeftY` 从 `Scalar=+1.0` 调整为 `Scalar=-1.0`，并将右摇杆 `Gamepad_RightY` 调整为 `Scalar=+1.0` 以匹配 FPSArena 相机链路。调整后需重新通过 UBT 编译并启动 `/Game/Training/Forge`，再由项目负责人复核。
+针对左右摇杆方向问题，FPSArena 的 `Gamepad_LeftY` 使用 `Scalar=-1.0`，右摇杆 `Gamepad_RightY` 使用 `Scalar=+1.0` 以匹配 FPSArena 相机链路。调整后已重新通过 UBT 编译并启动 `/Game/Training/Forge`，项目负责人确认左右摇杆方向均正常。
