@@ -73,5 +73,7 @@ Unreal MCP 服务已恢复并通过 `initialize` 握手，服务端为 `unreal-m
 
 GitHub 连接器当前未登录，返回 `USER_NOT_LOGGED_IN`。本地仓库仍没有 `git remote`，因此 Beast-Training-Grounds 远程地址、读写权限和推送状态继续为 BLOCKED。不能凭空设置远程地址。
 
+截图确认 GitHub 浏览器账户为 `hurutao`，本地已配置 `origin=https://github.com/hurutao/Beast-Training-Grounds.git`。`git ls-remote` 因当前环境连接 `github.com:443` 超时而未完成，Codex GitHub connector 仍返回 `USER_NOT_LOGGED_IN`。远程存在性、读写权限和推送状态继续为 BLOCKED。证据见 Evidence/P1/InputPrecisionValidation/github_remote_setup_2026-11-22.md。
+
 Xbox CSV 缺少原始轴列的数值，现有文件只能验证处理后范围和跳变，不能从旧文件重新证明径向死区修正后的输出。径向死区复采继续为 UNVERIFIED。
 
