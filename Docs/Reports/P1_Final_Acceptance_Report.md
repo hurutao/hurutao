@@ -65,3 +65,5 @@ DualSense 手柄接口使用 Windows 标准 HID/HidUsb 驱动。系统安装了 
 
 项目负责人反馈，启动 Steam Input 后启动 UE5，DualSense 已能够控制 UE5 模型视野。该路径状态为 HUMAN-VERIFIED，证明 Steam Input 能提供可用的控制转换。隔离采样工程尚未产生 Steam Input 路径的自动化 CSV，因此精度、死区、重复输入和异常跳变仍为 UNVERIFIED。证据见 Evidence/P1/InputPrecisionValidation/SteamInput_human_verification_2026-11-22.md。
 
+在 Steam 进程运行期间直接启动隔离 P1 工程，UE 没有注册 `XInputInterface::XInputController`，也没有产生采样回调。Steam Input 需要从 Steam 接管的非 Steam 游戏快捷方式启动该工程。证据见 Evidence/P1/InputPrecisionValidation/SteamInput_direct_launch_check_2026-11-22.md。
+
