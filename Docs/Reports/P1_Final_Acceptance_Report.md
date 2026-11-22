@@ -17,7 +17,7 @@
 | GitHub `hurutao/hurutao` remote | PASS（网页存在性） | GitHub 页面可打开，仓库为 Public，默认分支 `main`；本地 origin 已更新为该地址 |
 | GitHub Git CLI 读写权限 | PASS | `git push --dry-run origin master` 返回 `new branch master -> master` |
 | GitHub 连接器登录 | PASS | `github_get_profile`、`github_get_repo` 和权限查询均成功返回 |
-| P1 提交是否已推送 | PASS | 已执行普通 `git push origin master`，远程 `master` 与本地提交一致 |
+| P1 提交是否已推送 | PASS | 既有 P1 提交已由普通 `git push origin master` 推送；本次报告和连接器证据已写入远程 `master` |
 | 本地 P1 提交 | PASS | 本次报告提交后以本地 `HEAD` 与远程 `origin/master` 核对 |
 | Git LFS 本地配置 | PASS | Git LFS `3.8.1`，filter/storage 有效 |
 
@@ -104,7 +104,7 @@ Xbox CSV 缺少原始轴列的数值，现有文件只能验证处理后范围�
 | GitHub 远程存在性 | PASS（网页） | `https://github.com/hurutao/hurutao` 可打开，Public，默认分支 `main` |
 | GitHub Git CLI 读写权限 | PASS | dry-run 已被远程接受 |
 | GitHub 连接器登录 | PASS | `github_get_profile`、`github_get_repo`、`github_get_repo_collaborator_permission` 均成功；仓库权限为 `admin` |
-| GitHub Git CLI P1 推送 | PASS | 普通 `git push origin master` 成功，远程 master 与本地 HEAD 一致 |
+| GitHub Git CLI P1 推送 | PASS | 既有 P1 提交的普通 `git push origin master` 已成功；本次报告更新由 connector Contents API 完成 |
 | P1 是否可进入 P2 | PASS（待项目负责人审批） | P1 硬验收项已完成；DualSense 精细数据明确延期，不自动启动 P2 |
 
 DualSense 的 GameInput 接入层已恢复并通过运行日志验证，之前的 PS5 专用 Steam/HID 路径仍保持移除。Xbox 自动化采样、GitHub 网页存在性、Git CLI 写权限、P1 推送和 Codex GitHub connector 权限均已完成；项目仍停留在 P1，等待项目负责人审批后再决定是否进入 P2。
@@ -182,7 +182,7 @@ FPSArena 已启用 `GameInputWindows`、`GameInput`，增加 `GameInputBase` 依
 | PASS | Xbox 真实输入、轴向/径向死区、中心漂移、重复输入 | `Evidence/P1/InputPrecisionValidation/Raw/Xbox_2026-11-22/`；完整 CSV 54,092 行 |
 | PASS | DualSense GameInput 接入及粗粒度采样 | `Evidence/P1/InputPrecisionValidation/DualSense_coarse_capture_2026-11-22.md` 及同目录 Raw CSV/日志 |
 | HUMAN-VERIFIED | FPSArena 中 Xbox 与 DualSense 基础控制、DualSense 左右摇杆方向 | 项目负责人前台人工确认 |
-| PASS | GitHub 仓库存在、Git CLI 读写、P1 提交推送 | `https://github.com/hurutao/hurutao`；`origin`；普通 `git push origin master` |
+| PASS | GitHub 仓库存在、Git CLI 读写、P1 提交推送 | `https://github.com/hurutao/hurutao`；既有普通 `git push origin master`；本次报告由 connector Contents API 写入 |
 | PASS | Codex GitHub connector 登录与仓库权限 | `Evidence/P1/InputPrecisionValidation/github_connector_verification_2026-11-22.md`；仓库权限 `admin` |
 | UNVERIFIED（延期） | DualSense 精细死区、中心漂移、异常跳变、完整按键逐帧统计 | 项目负责人明确决定后期再调试；当前不伪造精细数据 |
 | FAIL | 本轮硬验收项 | 无 |
