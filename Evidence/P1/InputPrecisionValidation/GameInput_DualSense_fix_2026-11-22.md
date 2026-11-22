@@ -12,6 +12,7 @@ FPSArena 已移植同一条接入路径：
 - `FPSArena.Build.cs` 增加 `GameInputBase` 私有依赖。
 - `Config/DefaultInput.ini` 增加 DualSense Edge `VendorId=1356,ProductId=3570` 配置。
 - `ForgeController.cpp` 在本地控制器 BeginPlay 时补齐 6 个轴和 12 个按键映射。
+- 左摇杆 Y 使用 `Scalar=-1.0`，右摇杆 Y 按 FPSArena 相机链路使用 `Scalar=+1.0`。
 - 原有 Xbox/Steam Input 路径保留。
 
 ## 编译证据
@@ -57,7 +58,12 @@ LogInputDeviceProperties: Input device connection change: NewState=EInputDeviceC
 | GameInput 插件加载 | PASS | UE 5.9 运行日志已确认 |
 | DualSense Edge VID/PID 识别 | PASS | `054C:0DF2` 已连接 |
 | 轴和按键映射初始化 | PASS | 6 个轴、12 个按键 |
-| 实际摇杆、扳机、按键事件 | UNVERIFIED | 当前日志尚未包含一次新的前台操作事件 |
+| 实际摇杆、扳机、按键基础控制 | HUMAN-VERIFIED | 项目负责人确认 DualSense 已可控制 FPSArena 画面 |
+| 自动化逐帧轴/按键 CSV | UNVERIFIED | 当前修复日志尚未包含逐帧采样文件 |
 | Steam、DS4Windows、reWASD 重复映射 | PASS（本轮进程检查） | 未发现运行中的接管进程 |
 
 本记录只覆盖输入接入层修复，没有开发正式场景、角色、武器、怪物或 M1–M9 训练玩法。
+
+项目负责人随后在前台运行窗口确认 DualSense 已恢复控制 FPSArena 画面。该结果记录为 `HUMAN-VERIFIED`，不替代自动化逐帧 CSV。
+
+针对左右摇杆方向问题，已将 FPSArena 的 `Gamepad_LeftY` 从 `Scalar=+1.0` 调整为 `Scalar=-1.0`，并将右摇杆 `Gamepad_RightY` 调整为 `Scalar=+1.0` 以匹配 FPSArena 相机链路。调整后需重新通过 UBT 编译并启动 `/Game/Training/Forge`，再由项目负责人复核。

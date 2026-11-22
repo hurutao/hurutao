@@ -87,7 +87,8 @@ Xbox CSV 缺少原始轴列的数值，现有文件只能验证处理后范围�
 
 | 验收项 | 当前状态 | 依据 |
 |---|---|---|
-| 正式项目 DualSense GameInput 接入 | PASS（接入层） | GameInput 识别 `054C:0DF2`，映射初始化 6 轴、12 按键 |
+| 正式项目 DualSense GameInput 接入 | PASS | GameInput 识别 `054C:0DF2`，映射初始化 6 轴、12 按键 |
+| DualSense 基础控制 | HUMAN-VERIFIED | 项目负责人确认已可控制 FPSArena 画面，尚无自动化逐帧 CSV |
 | 正式项目 Xbox/通用手柄输入 | 保留 | 通用 Gamepad/Steam Input 动作映射未删除 |
 | 正式项目 UE 5.9 完整编译 | PASS | UnrealBuildTool 输出 `Result: Succeeded` |
 | Unreal MCP 握手 | PASS | `serverInfo.name=unreal-mcp`，`projectName=FPSArena` |
@@ -109,5 +110,9 @@ FPSArena 已启用 `GameInputWindows`、`GameInput`，增加 `GameInputBase` 依
 - `Game Input Device Connected ... ProdId: 0df2 (3570) VendId: 054c (1356)`
 - `RegisterDevice: DeviceId=1 InputDeviceName=GameInput HardwareDeviceIdentifier=Hid`
 
-因此 DualSense 的 Windows/UE GameInput 接入层状态更新为 PASS。实际摇杆、扳机和按键事件仍需一次前台操作日志，当前保持 UNVERIFIED。详细证据见 `Evidence/P1/InputPrecisionValidation/GameInput_DualSense_fix_2026-11-22.md`。
+因此 DualSense 的 Windows/UE GameInput 接入层状态为 PASS，基础控制更新为 `HUMAN-VERIFIED`。自动化逐帧摇杆、扳机和按键 CSV 尚未生成，精度、死区、中心漂移、重复输入和异常跳变仍保持 UNVERIFIED。详细证据见 `Evidence/P1/InputPrecisionValidation/GameInput_DualSense_fix_2026-11-22.md`。
+
+## DualSense 摇杆方向修正（2026-11-22）
+
+对照项目负责人反馈，FPSArena 的 `Gamepad_LeftY` 使用 `Scalar=-1.0`，右摇杆 `Gamepad_RightY` 已调整为 `Scalar=+1.0` 以匹配 FPSArena 相机链路。修正后需要重新通过 UE 5.9 UnrealBuildTool，并重新启动 `/Game/Training/Forge`。方向最终验收等待项目负责人在当前运行窗口复核左右摇杆。证据仍记录在 `Evidence/P1/InputPrecisionValidation/GameInput_DualSense_fix_2026-11-22.md`。
 
