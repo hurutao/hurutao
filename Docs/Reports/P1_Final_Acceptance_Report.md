@@ -57,3 +57,7 @@ Windows 当前仍能识别 DualSense Edge，设备状态为 `OK`。Codex 配置�
 
 DualSense 手柄接口使用 Windows 标准 HID/HidUsb 驱动。系统安装了 Nefarius ViGEmBus，但没有活动虚拟手柄，也没有运行中的 Steam、DS4Windows 或 reWASD 进程。驱动层审计为 PASS，UE RawInput 轴事件链路仍未产生采样回调。证据见 Evidence/P1/InputPrecisionValidation/DualSense_driver_audit_2026-11-22.md。
 
+## DualSense 最终采样复核
+
+项目负责人已在前台运行窗口完成摇杆、扳机和按键操作。采样器和 RawInput 设备注册日志正常，但没有生成 `P1_INPUT_SAMPLE`、`P1_RAW_AXIS` 或新增 CSV 数据。该项最终状态为 BLOCKED，证据见 Evidence/P1/InputPrecisionValidation/DualSense_capture_final_blocker_2026-11-22.md。P1 不能完成验收。
+
