@@ -12,8 +12,8 @@
 | Xbox 基础控制 | HUMAN-VERIFIED | 项目负责人已人工确认可以正常控制游戏，尚无自动化采样日志 |
 | DualSense 基础控制 | HUMAN-VERIFIED | 项目负责人已人工确认可以正常控制游戏，尚无自动化采样日志 |
 | UE Enhanced Input 精度采样 | UNVERIFIED | 已建立隔离采样工具，但尚无真实逐帧 CSV |
-| GitHub Beast-Training-Grounds remote | BLOCKED | 当前 `origin=https://github.com/hurutao/Beast-Training-Grounds.git`；`git ls-remote` 未完成 |
-| GitHub 读写权限 | BLOCKED | GitHub connector 返回 `USER_NOT_LOGGED_IN`，未取得读写权限证据 |
+| GitHub `hurutao/hurutao` remote | PASS（网页存在性） | GitHub 页面可打开，仓库为 Public，默认分支 `main`；本地 origin 已更新为该地址 |
+| GitHub 读写权限与 P1 推送 | BLOCKED | GitHub connector 返回 `USER_NOT_LOGGED_IN`，本机 `git ls-remote` 网络超时，未取得写权限或推送证据 |
 | 本地 P1 提交 | PASS | `410b06d` |
 | Git LFS 本地配置 | PASS | Git LFS `3.8.1`，filter/storage 有效 |
 
@@ -96,7 +96,8 @@ Xbox CSV 缺少原始轴列的数值，现有文件只能验证处理后范围�
 | Xbox 径向死区复采 | PASS | `Evidence/P1/InputPrecisionValidation/Raw/Xbox_2026-11-22/P1InputSamples_xbox_full.csv` 含 `raw_x/raw_y`、轴向和径向输出；静止窗口径向输出为零，全行程/对角输入产生非零输出 |
 | Xbox 摇杆、扳机和按键逐帧 CSV | PASS | 完整 CSV 共 54,092 行，含 LeftStick/RightStick、LT_L2/RT_R2 和 10 个按键动作 |
 | Xbox 中心漂移与重复输入 | PASS | 静止窗口原始偏移在径向死区内；修正逐帧重复计数后 `duplicate_count` 最大为 0 |
-| GitHub 远程存在性、读写权限、P1 推送 | BLOCKED | `git ls-remote` 连接 `github.com:443` 超时，GitHub connector 返回 `USER_NOT_LOGGED_IN` |
+| GitHub 远程存在性 | PASS（网页） | `https://github.com/hurutao/hurutao` 可打开，Public，默认分支 `main` |
+| GitHub 读写权限、P1 推送 | BLOCKED | `git ls-remote` 连接 `github.com:443` 超时，GitHub connector 返回 `USER_NOT_LOGGED_IN` |
 | P1 是否可进入 P2 | BLOCKED | GitHub 远程存在性、读写权限和 P1 推送仍未完成；P2 继续禁止进入 |
 
 DualSense 的 GameInput 接入层已恢复并通过运行日志验证，之前的 PS5 专用 Steam/HID 路径仍保持移除。项目仍停留在 P1，待实际事件采样、GitHub 远程核验和 Xbox 径向死区复采完成后，才可评估 P2。
@@ -113,12 +114,19 @@ DualSense 的 GameInput 接入层已恢复并通过运行日志验证，之前�
 
 - `PASS`：隔离采样工具可编译、可运行并产生真实 Xbox CSV；摇杆、扳机、十个主要按键、轴向/径向死区、中心静止窗口和逐帧重复计数均有证据。
 - `HUMAN-VERIFIED`：FPSArena 中 Xbox 与 DualSense 基础控制，以及 DualSense 左右摇杆方向。
-- `BLOCKED`：GitHub Beast-Training-Grounds 远程存在性、读写权限和 P1 推送。当前仍受 `git ls-remote` 网络超时及 GitHub connector `USER_NOT_LOGGED_IN` 阻断，未执行强制推送或历史覆盖。
+- `PASS`：GitHub `hurutao/hurutao` 网页存在性已确认，仓库为 Public，默认分支为 `main`；本地 `origin` 已更新为该准确地址。
+- `BLOCKED`：GitHub 连接器账号连接、写权限和 P1 推送。当前仍受 `USER_NOT_LOGGED_IN` 及本机 `git ls-remote` 网络超时阻断，未执行强制推送或历史覆盖。
 - `UNVERIFIED`：采样 CSV 的底层 `RawInput/HID` 原始层级和设备字段；这不影响本轮 XInput/Enhanced Input 处理链路的 Xbox 验证。
 
 P1 仍未完成，禁止进入 P2。下一步只剩项目负责人完成 GitHub 连接器登录或提供可访问的准确远程仓库后，复核远程存在性、读写权限和本地提交推送状态；完成后停止并等待项目负责人验收。
 
-本轮结束时本地 Git 已记录提交 `71bd2dd test: capture Xbox controller precision evidence`，提交身份为 `local-user <local@localhost>`。该提交尚未推送：本地 `origin` 地址存在，但 `git ls-remote` 网络验证和 GitHub connector 认证仍未通过。
+本轮结束时本地 Git 已记录提交 `71bd2dd test: capture Xbox controller precision evidence` 和 `931484e docs: update P1 GitHub blocker status`，提交身份为 `local-user <local@localhost>`。提交尚未推送：本地 `origin` 已指向 `https://github.com/hurutao/hurutao.git`，但 `git ls-remote` 网络验证和 GitHub connector 认证仍未通过。
+
+## 当前准确 GitHub 仓库复核（2026-11-22）
+
+项目负责人确认的准确地址为 `https://github.com/hurutao/hurutao`。网页可访问该仓库，页面显示仓库为 Public、默认分支为 `main`，当前页面可见历史为 1 个提交，因此仓库存在性状态更新为 `PASS（网页存在性）`。本地 `origin` 已按负责人提供的地址更新；该操作未推送任何文件。
+
+GitHub 连接器调用仍返回 `USER_NOT_LOGGED_IN`，本机对该地址执行 `git ls-remote` 在 `github.com:443` 超时。网页公开可读不等于当前账号拥有写权限，因此写权限和 P1 推送状态继续为 `BLOCKED`，不能把本地提交推送到该仓库，也不能进入 P2。
 
 ## DualSense GameInput 修复复核（2026-11-22）
 
