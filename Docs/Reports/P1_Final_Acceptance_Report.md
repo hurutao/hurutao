@@ -67,6 +67,10 @@ DualSense 手柄接口使用 Windows 标准 HID/HidUsb 驱动。系统安装了 
 
 在 Steam 进程运行期间直接启动隔离 P1 工程，UE 没有注册 `XInputInterface::XInputController`，也没有产生采样回调。Steam Input 需要从 Steam 接管的非 Steam 游戏快捷方式启动该工程。证据见 Evidence/P1/InputPrecisionValidation/SteamInput_direct_launch_check_2026-11-22.md。
 
+## PS5 输入范围变更
+
+项目负责人决定取消正式 FPSArena 项目中的 PS5/DualSense 输入支持。正式工程已移除 DualSense HID、PS5 Steam Input 配置、自适应扳机、陀螺仪和专用测试，保留通用 Xbox/Steam 手柄输入。正式工程使用 UE 5.9 UnrealBuildTool 完整编译通过，提交为 `0020ae6 input: remove PlayStation controller support`。证据见 Evidence/P1/InputPrecisionValidation/PlayStation_support_removed_2026-11-22.md。DualSense 不再作为正式项目 P1 验收项。
+
 ## 非 DualSense 项复核
 
 Unreal MCP 服务已恢复并通过 `initialize` 握手，服务端为 `unreal-mcp`，UE 版本为 `5.9.0-60351404`，项目为 FPSArena。MCP 状态更新为 PASS。
@@ -76,4 +80,20 @@ GitHub 连接器当前未登录，返回 `USER_NOT_LOGGED_IN`。本地仓库仍�
 截图确认 GitHub 浏览器账户为 `hurutao`，本地已配置 `origin=https://github.com/hurutao/Beast-Training-Grounds.git`。`git ls-remote` 因当前环境连接 `github.com:443` 超时而未完成，Codex GitHub connector 仍返回 `USER_NOT_LOGGED_IN`。远程存在性、读写权限和推送状态继续为 BLOCKED。证据见 Evidence/P1/InputPrecisionValidation/github_remote_setup_2026-11-22.md。
 
 Xbox CSV 缺少原始轴列的数值，现有文件只能验证处理后范围和跳变，不能从旧文件重新证明径向死区修正后的输出。径向死区复采继续为 UNVERIFIED。
+
+## 当前有效验收快照（2026-11-22）
+
+本节覆盖此前记录之后的最新范围决定和验证结果。此前关于 DualSense 采样阻断的内容保留为历史证据，不再作为正式 FPSArena 项目的待验收项。
+
+| 验收项 | 当前状态 | 依据 |
+|---|---|---|
+| 正式项目 PS5/DualSense 输入支持 | 已取消 | 正式工程提交 `0020ae6 input: remove PlayStation controller support` |
+| 正式项目 Xbox/通用手柄输入 | 保留 | 通用 Gamepad/Steam Input 动作映射未删除 |
+| 正式项目 UE 5.9 完整编译 | PASS | UnrealBuildTool 输出 `Result: Succeeded` |
+| Unreal MCP 握手 | PASS | `serverInfo.name=unreal-mcp`，`projectName=FPSArena` |
+| Xbox 径向死区复采 | UNVERIFIED | 现有 CSV 的 `raw_x/raw_y` 列为空，不能证明复采结果 |
+| GitHub 远程存在性、读写权限、P1 推送 | BLOCKED | `git ls-remote` 连接 `github.com:443` 超时，GitHub connector 返回 `USER_NOT_LOGGED_IN` |
+| P1 是否可进入 P2 | BLOCKED | GitHub 远程核验和 Xbox 径向死区复采仍未完成 |
+
+PS5/DualSense 不再阻止正式项目的 P1 范围。项目仍停留在 P1，待剩余项目完成并由项目负责人验收后，才可评估 P2。
 
