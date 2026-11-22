@@ -25,3 +25,4 @@ void AP1InputValidationController::SetupInputComponent()
         UE_LOG(LogTemp, Warning, TEXT("P1_INPUT BLOCKED controller InputComponent is not EnhancedInputComponent"));
     }
 }
+

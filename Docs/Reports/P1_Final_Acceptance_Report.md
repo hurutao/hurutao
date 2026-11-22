@@ -45,3 +45,7 @@ Xbox 已在仅连接 Xbox One 控制器的条件下产生真实 CSV，摇杆 X/Y
 
 Windows PnP 可识别 DualSense，但 UE 日志只注册 XInputInterface::XInputController，没有注册 DualSense 游戏输入设备。当前 Gamepad_* Enhanced Input 映射因此只能驱动 Xbox/XInput。DualSense 状态为 Windows PASS、当前 UE 映射 FAIL、采样 BLOCKED。证据见 Evidence/P1/InputPrecisionValidation/DualSense_diagnosis.md。
 
+## RawInput 接入复核
+
+隔离工程启用 UE 5.9 RawInput 后，UnrealEditor-Cmd 在 BeginPlay 枚举设备时发生 `EXCEPTION_ACCESS_VIOLATION`，调用栈进入 `UnrealEditor-RawInput.dll`。该插件路径状态为 FAIL，已移除隔离工程依赖并重新通过 UBT 编译。证据见 Evidence/P1/InputPrecisionValidation/RawInput_plugin_test.md。DualSense 自动化采样仍为 BLOCKED，P1 尚未完成，禁止进入 P2。
+
