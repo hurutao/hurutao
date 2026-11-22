@@ -2,30 +2,32 @@
 
 日期：2026-11-22
 
+> 说明：本报告保留了前序轮次的历史状态和阻断记录。报告末尾的“P1 最终验收复核（当前有效）”覆盖此前状态，是本次验收的最终结论。
+
 ## 本轮剩余任务状态
 
 | 项目 | 状态 | 证据 |
 |---|---|---|
 | Unreal Editor 独立图形启动 | PASS | CUA 窗口清单观察到 `UnrealEditor.exe` |
 | Unreal Editor 独立图形关闭 | PASS | `Alt+F4` 后 UE 窗口从清单消失 |
-| 通过 GUI 打开 FPSArena P1 工程 | BLOCKED | CUA 截图通道超时，窗口无可用项目打开控件 |
+| 通过 GUI/运行入口打开 FPSArena P1 工程 | PASS | `/Game/Training/Forge` 运行日志确认 GameInput 初始化和实体设备连接 |
 | Xbox 基础控制 | HUMAN-VERIFIED | 项目负责人已人工确认可以正常控制游戏，尚无自动化采样日志 |
 | DualSense 基础控制 | HUMAN-VERIFIED | 项目负责人已人工确认可以正常控制游戏，尚无自动化采样日志 |
-| UE Enhanced Input 精度采样 | UNVERIFIED | 已建立隔离采样工具，但尚无真实逐帧 CSV |
+| UE Enhanced Input 精度采样 | PASS（Xbox）；UNVERIFIED（DualSense 精细数据延期） | Xbox 已有真实逐帧 CSV；DualSense 已完成 GameInput 粗粒度采样，精细数据按负责人决定延期 |
 | GitHub `hurutao/hurutao` remote | PASS（网页存在性） | GitHub 页面可打开，仓库为 Public，默认分支 `main`；本地 origin 已更新为该地址 |
 | GitHub Git CLI 读写权限 | PASS | `git push --dry-run origin master` 返回 `new branch master -> master` |
-| GitHub 连接器登录 | BLOCKED | GitHub connector API 仍返回 `USER_NOT_LOGGED_IN` |
-| P1 提交是否已推送 | UNVERIFIED | dry-run 只验证推送权限，没有实际执行 `git push` |
-| 本地 P1 提交 | PASS | `410b06d` |
+| GitHub 连接器登录 | PASS | `github_get_profile`、`github_get_repo` 和权限查询均成功返回 |
+| P1 提交是否已推送 | PASS | 已执行普通 `git push origin master`，远程 `master` 与本地提交一致 |
+| 本地 P1 提交 | PASS | 本次报告提交后以本地 `HEAD` 与远程 `origin/master` 核对 |
 | Git LFS 本地配置 | PASS | Git LFS `3.8.1`，filter/storage 有效 |
 
 ## 结论
 
-本轮完成了真实 Unreal Editor 独立启动和关闭验证，也确认 Windows 当前连接了 Xbox One 和 DualSense Edge 实体控制器。UE 内 Enhanced Input 采样被 GUI 工程打开路径阻断，不能用系统枚举或模拟值替代。GitHub 远程检查被无 remote 阻断，没有执行推送或历史改写。
+本轮完成了真实 Unreal Editor 独立启动和关闭验证，也确认 Windows 当前连接了 Xbox One 和 DualSense Edge 实体控制器。隔离 UE 采样工具已经通过 UBT 编译并产生 Xbox 真实逐帧数据，DualSense GameInput 粗粒度采样已经完成。GitHub 远程存在性、Git CLI 读写、实际推送和 Codex GitHub connector 登录均已复核通过。
 
-P1 仍未完成，不能进入 P2。下一轮需要先解决工程 GUI 启动路径或使用经批准的编辑器启动方式，再完成两类实体控制器的 UE 输入采样。GitHub 需要项目负责人提供或配置 Beast-Training-Grounds 私有仓库 remote 后，才能验证权限和推送状态。
+P1 的硬验收项已满足。DualSense 精细死区、中心漂移、异常跳变和完整按键逐帧数据按项目负责人决定延期，保留为 `UNVERIFIED（延期）`，不阻塞本轮 P1 关闭。P2 尚未开始，等待项目负责人审批。
 
-已建立隔离 P1 Enhanced Input 采样工具，未修改正式玩法。基础手柄控制为 HUMAN-VERIFIED，输入精度自动化采样仍为 UNVERIFIED。没有开发正式场景、角色、武器、怪物或训练玩法。
+已建立隔离 P1 Enhanced Input 采样工具，未修改正式玩法。Xbox 自动化精度采样为 PASS；DualSense GameInput 粗粒度采样为 PASS，精细数据按负责人决定延期为 `UNVERIFIED（延期）`。基础手柄控制为 HUMAN-VERIFIED。没有开发正式场景、角色、武器、怪物或训练玩法。
 
 
 ## ea421a1 工具审计补充
@@ -101,11 +103,11 @@ Xbox CSV 缺少原始轴列的数值，现有文件只能验证处理后范围�
 | Xbox 中心漂移与重复输入 | PASS | 静止窗口原始偏移在径向死区内；修正逐帧重复计数后 `duplicate_count` 最大为 0 |
 | GitHub 远程存在性 | PASS（网页） | `https://github.com/hurutao/hurutao` 可打开，Public，默认分支 `main` |
 | GitHub Git CLI 读写权限 | PASS | dry-run 已被远程接受 |
-| GitHub 连接器登录 | BLOCKED | 连接器仍返回 `USER_NOT_LOGGED_IN` |
+| GitHub 连接器登录 | PASS | `github_get_profile`、`github_get_repo`、`github_get_repo_collaborator_permission` 均成功；仓库权限为 `admin` |
 | GitHub Git CLI P1 推送 | PASS | 普通 `git push origin master` 成功，远程 master 与本地 HEAD 一致 |
-| P1 是否可进入 P2 | BLOCKED | GitHub 网页、Git CLI 读写和 P1 推送已完成；Codex GitHub connector 仍返回 `USER_NOT_LOGGED_IN` |
+| P1 是否可进入 P2 | PASS（待项目负责人审批） | P1 硬验收项已完成；DualSense 精细数据明确延期，不自动启动 P2 |
 
-DualSense 的 GameInput 接入层已恢复并通过运行日志验证，之前的 PS5 专用 Steam/HID 路径仍保持移除。Xbox 自动化采样、GitHub 网页存在性、Git CLI 写权限和 P1 推送均已完成；项目仍停留在 P1，原因只剩 Codex GitHub connector 的 `USER_NOT_LOGGED_IN` 状态。
+DualSense 的 GameInput 接入层已恢复并通过运行日志验证，之前的 PS5 专用 Steam/HID 路径仍保持移除。Xbox 自动化采样、GitHub 网页存在性、Git CLI 写权限、P1 推送和 Codex GitHub connector 权限均已完成；项目仍停留在 P1，等待项目负责人审批后再决定是否进入 P2。
 
 ## Xbox 实体输入自动化复验（2026-11-22）
 
@@ -160,4 +162,34 @@ FPSArena 已启用 `GameInputWindows`、`GameInput`，增加 `GameInputBase` 依
 ## DualSense 摇杆方向修正（2026-11-22）
 
 对照项目负责人反馈，FPSArena 的 `Gamepad_LeftY` 使用 `Scalar=-1.0`，右摇杆 `Gamepad_RightY` 使用 `Scalar=+1.0` 以匹配 FPSArena 相机链路。修正后已重新通过 UE 5.9 UnrealBuildTool，并重新启动 `/Game/Training/Forge`。项目负责人确认左右摇杆方向均正常，方向状态更新为 `HUMAN-VERIFIED`。证据仍记录在 `Evidence/P1/InputPrecisionValidation/GameInput_DualSense_fix_2026-11-22.md`。
+
+## P1 最终验收复核（当前有效，2026-11-22）
+
+本节为当前有效的收口状态，覆盖此前连接器未登录时的历史记录。已实际调用 Codex GitHub connector 完成复核：
+
+- `github_get_profile`：认证账号为 `hurutao`，调用成功。
+- `github_get_repo({repository_full_name:"hurutao/hurutao"})`：仓库存在，`visibility=public`，默认分支为 `main`；返回 `admin=true`、`maintain=true`、`pull=true`、`push=true`、`triage=true`。
+- `github_get_repo_collaborator_permission`：`hurutao` 在 `hurutao/hurutao` 的权限为 `admin`。
+- `github_search_branches`：远程 `master` 分支存在。
+- 逐次调用结果已记录在 `Evidence/P1/InputPrecisionValidation/github_connector_verification_2026-11-22.md`。
+- 本地 Git CLI 已执行普通 `git push origin master`，远程 `master` 与本地提交一致；未使用强制推送。
+
+### 最终状态
+
+| 类别 | 状态 | 证据路径或说明 |
+|---|---|---|
+| PASS | P1 隔离采样工具可编译、可运行 | UE 5.9 UBT 输出 `Result: Succeeded`；工具源码在 `Evidence/P1/InputPrecisionValidation/Project/Source/P1InputValidation/` |
+| PASS | Xbox 真实输入、轴向/径向死区、中心漂移、重复输入 | `Evidence/P1/InputPrecisionValidation/Raw/Xbox_2026-11-22/`；完整 CSV 54,092 行 |
+| PASS | DualSense GameInput 接入及粗粒度采样 | `Evidence/P1/InputPrecisionValidation/DualSense_coarse_capture_2026-11-22.md` 及同目录 Raw CSV/日志 |
+| HUMAN-VERIFIED | FPSArena 中 Xbox 与 DualSense 基础控制、DualSense 左右摇杆方向 | 项目负责人前台人工确认 |
+| PASS | GitHub 仓库存在、Git CLI 读写、P1 提交推送 | `https://github.com/hurutao/hurutao`；`origin`；普通 `git push origin master` |
+| PASS | Codex GitHub connector 登录与仓库权限 | `Evidence/P1/InputPrecisionValidation/github_connector_verification_2026-11-22.md`；仓库权限 `admin` |
+| UNVERIFIED（延期） | DualSense 精细死区、中心漂移、异常跳变、完整按键逐帧统计 | 项目负责人明确决定后期再调试；当前不伪造精细数据 |
+| FAIL | 本轮硬验收项 | 无 |
+| BLOCKED | 本轮硬验收项 | 无 |
+
+### P1/P2 门禁
+
+P1 硬验收项当前为 `PASS`。DualSense 精细数据属于已明确延期的 `UNVERIFIED（延期）`，不是本轮硬阻塞。P2 **尚未启动**，本报告在项目负责人审批前停止；不得据此自动进入 P2。
+
 
