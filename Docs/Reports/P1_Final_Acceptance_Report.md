@@ -121,12 +121,12 @@ DualSense 的 GameInput 接入层已恢复并通过运行日志验证，之前�
 - `PASS`：GitHub `hurutao/hurutao` 网页存在性已确认，仓库为 Public，默认分支为 `main`；本地 `origin` 已更新为该准确地址。
 - `PASS`：Git CLI 对 `hurutao/hurutao` 的推送权限已通过 `git push --dry-run origin master` 验证，远程返回将创建 `master` 分支。
 - `BLOCKED`：GitHub 连接器账号连接仍返回 `USER_NOT_LOGGED_IN`。
-- `PASS`：项目负责人授权后已执行普通 `git push origin master`，远程 `master` 为 `63d1ab1e0deba0ea2e19d1e9ea118051fcfd15bb`，与本地 HEAD 一致。
+- `PASS`：项目负责人授权后已执行普通 `git push origin master`，最终远程 `master` 为 `d59ee8d8c887317bbe69f564fc8f7c7a8cdab537`，与本地 HEAD 一致。
 - `UNVERIFIED`：采样 CSV 的底层 `RawInput/HID` 原始层级和设备字段；这不影响本轮 XInput/Enhanced Input 处理链路的 Xbox 验证。
 
 P1 仍未完成，禁止进入 P2。下一步只剩项目负责人完成 GitHub 连接器登录或提供可访问的准确远程仓库后，复核远程存在性、读写权限和本地提交推送状态；完成后停止并等待项目负责人验收。
 
-本轮结束时本地 Git 已记录提交 `71bd2dd test: capture Xbox controller precision evidence`、`931484e docs: update P1 GitHub blocker status`、`000f0a7 docs: record verified GitHub repository address` 和 `63d1ab1 docs: verify GitHub push permission with dry run`，提交身份为 `local-user <local@localhost>`。这些提交已通过普通 `git push origin master` 推送到远程 `master`；Codex GitHub connector 认证仍未通过。
+本轮结束时本地 Git 已记录提交 `71bd2dd test: capture Xbox controller precision evidence`、`931484e docs: update P1 GitHub blocker status`、`000f0a7 docs: record verified GitHub repository address`、`63d1ab1 docs: verify GitHub push permission with dry run` 和 `d59ee8d docs: record GitHub P1 push completion`，提交身份为 `local-user <local@localhost>`。这些提交已通过普通 `git push origin master` 推送到远程 `master`；Codex GitHub connector 认证仍未通过。
 
 ## 当前准确 GitHub 仓库复核（2026-11-22）
 
@@ -134,7 +134,7 @@ P1 仍未完成，禁止进入 P2。下一步只剩项目负责人完成 GitHub 
 
 GitHub 连接器调用仍返回 `USER_NOT_LOGGED_IN`，本机对该地址执行 `git ls-remote` 曾在 `github.com:443` 超时。网页公开可读本身不等于写权限；随后 Git CLI dry-run 已单独验证写权限，但实际 P1 推送仍未执行，连接器登录仍未完成。
 
-补充验证：先通过 `git push --dry-run origin master` 验证写权限，随后在项目负责人明确授权后执行普通 `git push origin master`。远程 `master` 已与本地 HEAD `63d1ab1e0deba0ea2e19d1e9ea118051fcfd15bb` 一致，实际 P1 推送更新为 `PASS`。连接器登录仍为 `BLOCKED`，证据见 `Evidence/P1/InputPrecisionValidation/github_push_2026-11-22.md`。
+补充验证：先通过 `git push --dry-run origin master` 验证写权限，随后在项目负责人明确授权后执行普通 `git push origin master`，并同步了最终报告提交。最终远程 `master` 已与本地 HEAD `d59ee8d8c887317bbe69f564fc8f7c7a8cdab537` 一致，实际 P1 推送状态为 `PASS`。连接器登录仍为 `BLOCKED`，证据见 `Evidence/P1/InputPrecisionValidation/github_push_2026-11-22.md`。
 
 ## DualSense GameInput 修复复核（2026-11-22）
 

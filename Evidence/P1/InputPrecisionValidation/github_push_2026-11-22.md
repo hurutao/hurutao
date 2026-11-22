@@ -21,7 +21,7 @@ To https://github.com/hurutao/hurutao.git
  * [new branch]      master -> master
 ```
 
-随后执行远程分支核对：
+随后执行远程分支核对，并在报告更新后再次推送最终提交：
 
 ```text
 git ls-remote origin refs/heads/master refs/heads/main
@@ -31,10 +31,10 @@ git ls-remote origin refs/heads/master refs/heads/main
 
 ```text
 cbb0995d77e3f2713241809a898876d9382438d3	refs/heads/main
-63d1ab1e0deba0ea2e19d1e9ea118051fcfd15bb	refs/heads/master
+d59ee8d8c887317bbe69f564fc8f7c7a8cdab537	refs/heads/master
 ```
 
-本地 P1 HEAD 与远程 `master` 均为 `63d1ab1e0deba0ea2e19d1e9ea118051fcfd15bb`，推送状态：`PASS`。没有使用强制推送，也没有覆盖远程历史。
+最终本地 P1 HEAD 与远程 `master` 均为 `d59ee8d8c887317bbe69f564fc8f7c7a8cdab537`，推送状态：`PASS`。没有使用强制推送，也没有覆盖远程历史。
 
 ## 连接器分离状态
 
