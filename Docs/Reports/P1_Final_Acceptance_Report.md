@@ -83,11 +83,11 @@ Xbox CSV 缺少原始轴列的数值，现有文件只能验证处理后范围�
 
 ## 当前有效验收快照（2026-11-22）
 
-本节覆盖此前记录之后的最新范围决定和验证结果。此前关于 DualSense 采样阻断的内容保留为历史证据，不再作为正式 FPSArena 项目的待验收项。
+本节覆盖此前记录之后的最新范围决定和验证结果。此前关于 DualSense 采样阻断和取消支持的内容保留为历史证据。本轮根据已找到的 GameInput 实现恢复 DualSense 的正式输入接入，实际硬件事件仍需前台操作日志。
 
 | 验收项 | 当前状态 | 依据 |
 |---|---|---|
-| 正式项目 PS5/DualSense 输入支持 | 已取消 | 正式工程提交 `0020ae6 input: remove PlayStation controller support` |
+| 正式项目 DualSense GameInput 接入 | PASS（接入层） | GameInput 识别 `054C:0DF2`，映射初始化 6 轴、12 按键 |
 | 正式项目 Xbox/通用手柄输入 | 保留 | 通用 Gamepad/Steam Input 动作映射未删除 |
 | 正式项目 UE 5.9 完整编译 | PASS | UnrealBuildTool 输出 `Result: Succeeded` |
 | Unreal MCP 握手 | PASS | `serverInfo.name=unreal-mcp`，`projectName=FPSArena` |
@@ -95,5 +95,19 @@ Xbox CSV 缺少原始轴列的数值，现有文件只能验证处理后范围�
 | GitHub 远程存在性、读写权限、P1 推送 | BLOCKED | `git ls-remote` 连接 `github.com:443` 超时，GitHub connector 返回 `USER_NOT_LOGGED_IN` |
 | P1 是否可进入 P2 | BLOCKED | GitHub 远程核验和 Xbox 径向死区复采仍未完成 |
 
-PS5/DualSense 不再阻止正式项目的 P1 范围。项目仍停留在 P1，待剩余项目完成并由项目负责人验收后，才可评估 P2。
+DualSense 的 GameInput 接入层已恢复并通过运行日志验证，之前的 PS5 专用 Steam/HID 路径仍保持移除。项目仍停留在 P1，待实际事件采样、GitHub 远程核验和 Xbox 径向死区复采完成后，才可评估 P2。
+
+## DualSense GameInput 修复复核（2026-11-22）
+
+项目负责人提供了已跑通 DualSense 的实现线索。经本机工程审计，`NovaShooter` 使用 UE 5.9 `GameInputWindows`/`GameInputBase`，通过 DualSense Edge 的 `054C:0DF2` VID/PID 配置和运行时映射补齐接通设备。该实现已移植到 FPSArena。
+
+FPSArena 已启用 `GameInputWindows`、`GameInput`，增加 `GameInputBase` 依赖，并在 `ForgeController.cpp` 中配置 6 个轴、12 个按键。UE 5.9 UnrealBuildTool 完整编译结果为 `Result: Succeeded`。
+
+运行日志已确认：
+
+- `DualSense Edge GameInput mappings initialized: 6 axes, 12 buttons.`
+- `Game Input Device Connected ... ProdId: 0df2 (3570) VendId: 054c (1356)`
+- `RegisterDevice: DeviceId=1 InputDeviceName=GameInput HardwareDeviceIdentifier=Hid`
+
+因此 DualSense 的 Windows/UE GameInput 接入层状态更新为 PASS。实际摇杆、扳机和按键事件仍需一次前台操作日志，当前保持 UNVERIFIED。详细证据见 `Evidence/P1/InputPrecisionValidation/GameInput_DualSense_fix_2026-11-22.md`。
 
