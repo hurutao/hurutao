@@ -13,7 +13,9 @@
 | DualSense 基础控制 | HUMAN-VERIFIED | 项目负责人已人工确认可以正常控制游戏，尚无自动化采样日志 |
 | UE Enhanced Input 精度采样 | UNVERIFIED | 已建立隔离采样工具，但尚无真实逐帧 CSV |
 | GitHub `hurutao/hurutao` remote | PASS（网页存在性） | GitHub 页面可打开，仓库为 Public，默认分支 `main`；本地 origin 已更新为该地址 |
-| GitHub 读写权限与 P1 推送 | BLOCKED | GitHub connector 返回 `USER_NOT_LOGGED_IN`，本机 `git ls-remote` 网络超时，未取得写权限或推送证据 |
+| GitHub Git CLI 读写权限 | PASS | `git push --dry-run origin master` 返回 `new branch master -> master` |
+| GitHub 连接器登录 | BLOCKED | GitHub connector API 仍返回 `USER_NOT_LOGGED_IN` |
+| P1 提交是否已推送 | UNVERIFIED | dry-run 只验证推送权限，没有实际执行 `git push` |
 | 本地 P1 提交 | PASS | `410b06d` |
 | Git LFS 本地配置 | PASS | Git LFS `3.8.1`，filter/storage 有效 |
 
@@ -97,7 +99,8 @@ Xbox CSV 缺少原始轴列的数值，现有文件只能验证处理后范围�
 | Xbox 摇杆、扳机和按键逐帧 CSV | PASS | 完整 CSV 共 54,092 行，含 LeftStick/RightStick、LT_L2/RT_R2 和 10 个按键动作 |
 | Xbox 中心漂移与重复输入 | PASS | 静止窗口原始偏移在径向死区内；修正逐帧重复计数后 `duplicate_count` 最大为 0 |
 | GitHub 远程存在性 | PASS（网页） | `https://github.com/hurutao/hurutao` 可打开，Public，默认分支 `main` |
-| GitHub 读写权限、P1 推送 | BLOCKED | `git ls-remote` 连接 `github.com:443` 超时，GitHub connector 返回 `USER_NOT_LOGGED_IN` |
+| GitHub Git CLI 读写权限 | PASS | dry-run 已被远程接受 |
+| GitHub 连接器登录、P1 推送 | BLOCKED / UNVERIFIED | 连接器仍 `USER_NOT_LOGGED_IN`；实际 push 尚未执行 |
 | P1 是否可进入 P2 | BLOCKED | GitHub 远程存在性、读写权限和 P1 推送仍未完成；P2 继续禁止进入 |
 
 DualSense 的 GameInput 接入层已恢复并通过运行日志验证，之前的 PS5 专用 Steam/HID 路径仍保持移除。项目仍停留在 P1，待实际事件采样、GitHub 远程核验和 Xbox 径向死区复采完成后，才可评估 P2。
@@ -115,7 +118,9 @@ DualSense 的 GameInput 接入层已恢复并通过运行日志验证，之前�
 - `PASS`：隔离采样工具可编译、可运行并产生真实 Xbox CSV；摇杆、扳机、十个主要按键、轴向/径向死区、中心静止窗口和逐帧重复计数均有证据。
 - `HUMAN-VERIFIED`：FPSArena 中 Xbox 与 DualSense 基础控制，以及 DualSense 左右摇杆方向。
 - `PASS`：GitHub `hurutao/hurutao` 网页存在性已确认，仓库为 Public，默认分支为 `main`；本地 `origin` 已更新为该准确地址。
-- `BLOCKED`：GitHub 连接器账号连接、写权限和 P1 推送。当前仍受 `USER_NOT_LOGGED_IN` 及本机 `git ls-remote` 网络超时阻断，未执行强制推送或历史覆盖。
+- `PASS`：Git CLI 对 `hurutao/hurutao` 的推送权限已通过 `git push --dry-run origin master` 验证，远程返回将创建 `master` 分支。
+- `BLOCKED`：GitHub 连接器账号连接仍返回 `USER_NOT_LOGGED_IN`。
+- `UNVERIFIED`：实际 P1 推送尚未执行；dry-run 没有上传文件，也没有改写远程历史。
 - `UNVERIFIED`：采样 CSV 的底层 `RawInput/HID` 原始层级和设备字段；这不影响本轮 XInput/Enhanced Input 处理链路的 Xbox 验证。
 
 P1 仍未完成，禁止进入 P2。下一步只剩项目负责人完成 GitHub 连接器登录或提供可访问的准确远程仓库后，复核远程存在性、读写权限和本地提交推送状态；完成后停止并等待项目负责人验收。
@@ -126,7 +131,9 @@ P1 仍未完成，禁止进入 P2。下一步只剩项目负责人完成 GitHub 
 
 项目负责人确认的准确地址为 `https://github.com/hurutao/hurutao`。网页可访问该仓库，页面显示仓库为 Public、默认分支为 `main`，当前页面可见历史为 1 个提交，因此仓库存在性状态更新为 `PASS（网页存在性）`。本地 `origin` 已按负责人提供的地址更新；该操作未推送任何文件。
 
-GitHub 连接器调用仍返回 `USER_NOT_LOGGED_IN`，本机对该地址执行 `git ls-remote` 在 `github.com:443` 超时。网页公开可读不等于当前账号拥有写权限，因此写权限和 P1 推送状态继续为 `BLOCKED`，不能把本地提交推送到该仓库，也不能进入 P2。
+GitHub 连接器调用仍返回 `USER_NOT_LOGGED_IN`，本机对该地址执行 `git ls-remote` 曾在 `github.com:443` 超时。网页公开可读本身不等于写权限；随后 Git CLI dry-run 已单独验证写权限，但实际 P1 推送仍未执行，连接器登录仍未完成。
+
+补充验证：`git push --dry-run origin master` 已成功返回 `new branch master -> master`，因此 Git CLI 写权限更新为 `PASS`。该命令没有实际推送；连接器登录仍为 `BLOCKED`，实际 P1 推送仍为 `UNVERIFIED`。
 
 ## DualSense GameInput 修复复核（2026-11-22）
 
