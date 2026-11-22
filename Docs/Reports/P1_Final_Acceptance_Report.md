@@ -12,8 +12,8 @@
 | Xbox 基础控制 | HUMAN-VERIFIED | 项目负责人已人工确认可以正常控制游戏，尚无自动化采样日志 |
 | DualSense 基础控制 | HUMAN-VERIFIED | 项目负责人已人工确认可以正常控制游戏，尚无自动化采样日志 |
 | UE Enhanced Input 精度采样 | UNVERIFIED | 已建立隔离采样工具，但尚无真实逐帧 CSV |
-| GitHub Beast-Training-Grounds remote | BLOCKED | `git remote -v` 无输出 |
-| GitHub 读写权限 | BLOCKED | 无远程地址和认证目标 |
+| GitHub Beast-Training-Grounds remote | BLOCKED | 当前 `origin=https://github.com/hurutao/Beast-Training-Grounds.git`；`git ls-remote` 未完成 |
+| GitHub 读写权限 | BLOCKED | GitHub connector 返回 `USER_NOT_LOGGED_IN`，未取得读写权限证据 |
 | 本地 P1 提交 | PASS | `410b06d` |
 | Git LFS 本地配置 | PASS | Git LFS `3.8.1`，filter/storage 有效 |
 
@@ -117,6 +117,8 @@ DualSense 的 GameInput 接入层已恢复并通过运行日志验证，之前�
 - `UNVERIFIED`：采样 CSV 的底层 `RawInput/HID` 原始层级和设备字段；这不影响本轮 XInput/Enhanced Input 处理链路的 Xbox 验证。
 
 P1 仍未完成，禁止进入 P2。下一步只剩项目负责人完成 GitHub 连接器登录或提供可访问的准确远程仓库后，复核远程存在性、读写权限和本地提交推送状态；完成后停止并等待项目负责人验收。
+
+本轮结束时本地 Git 已记录提交 `71bd2dd test: capture Xbox controller precision evidence`，提交身份为 `local-user <local@localhost>`。该提交尚未推送：本地 `origin` 地址存在，但 `git ls-remote` 网络验证和 GitHub connector 认证仍未通过。
 
 ## DualSense GameInput 修复复核（2026-11-22）
 
