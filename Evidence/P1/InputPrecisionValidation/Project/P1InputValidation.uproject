@@ -18,8 +18,16 @@
       "Enabled": true
     },
     {
-      "Name": "RawInput",
+      "Name": "GameInputWindows",
       "Enabled": true
     },
+    {
+      "Name": "GameInput",
+      "Enabled": true
+    },
+    {
+      "Name": "RawInput",
+      "Enabled": true
+    }
   ]
 }

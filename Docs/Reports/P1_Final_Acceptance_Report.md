@@ -136,6 +136,12 @@ GitHub 连接器调用仍返回 `USER_NOT_LOGGED_IN`，本机对该地址执行 
 
 补充验证：先通过 `git push --dry-run origin master` 验证写权限，随后在项目负责人明确授权后执行普通 `git push origin master`，并同步了最终报告提交。最后一次 `git ls-remote origin refs/heads/master` 与本地 HEAD 核对一致，实际 P1 推送状态为 `PASS`。连接器登录仍为 `BLOCKED`，证据见 `Evidence/P1/InputPrecisionValidation/github_push_2026-11-22.md`。
 
+## DualSense 隔离采样工具修复（2026-11-22）
+
+为完成 P1 的 DualSense 自动化采样，隔离工程已启用 UE 5.9 `GameInputWindows`/`GameInput`，增加 `GameInputBase` 依赖，并加入 DualSense Edge `054C:0DF2` 的 6 轴、12 按键运行时映射。工程通过 UBT 编译，结果为 `Result: Succeeded`；运行日志确认 GameInput 模块启动并输出 `P1_INPUT DualSense GameInput mappings initialized: 6 axes, 12 buttons`。证据见 `Evidence/P1/InputPrecisionValidation/DualSense_sampler_GameInput_setup_2026-11-22.log`。
+
+本次运行时 Windows 只检测到 Xbox One 控制器，没有检测到 DualSense，因此尚未生成真实 DualSense CSV。该项继续为 `UNVERIFIED`，不得用 Xbox 或模拟值替代。完成采样需要连接 DualSense 后运行隔离工程并执行相同的摇杆、扳机和按键动作序列。
+
 ## DualSense GameInput 修复复核（2026-11-22）
 
 项目负责人提供了已跑通 DualSense 的实现线索。经本机工程审计，`NovaShooter` 使用 UE 5.9 `GameInputWindows`/`GameInputBase`，通过 DualSense Edge 的 `054C:0DF2` VID/PID 配置和运行时映射补齐接通设备。该实现已移植到 FPSArena。
