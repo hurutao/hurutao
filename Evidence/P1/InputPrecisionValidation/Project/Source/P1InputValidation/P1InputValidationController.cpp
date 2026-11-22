@@ -19,10 +19,15 @@ void AP1InputValidationController::SetupInputComponent()
     {
         InputComponent = NewObject<UEnhancedInputComponent>(this, TEXT("P1EnhancedInputComponent"));
         InputComponent->RegisterComponent();
+        PushInputComponent(InputComponent);
     }
     if (!Cast<UEnhancedInputComponent>(InputComponent))
     {
         UE_LOG(LogTemp, Warning, TEXT("P1_INPUT BLOCKED controller InputComponent is not EnhancedInputComponent"));
+    }
+    else
+    {
+        UE_LOG(LogTemp, Display, TEXT("P1_INPUT EnhancedInputComponent ready"));
     }
 }
 

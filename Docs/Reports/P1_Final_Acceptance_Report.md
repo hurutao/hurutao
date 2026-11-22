@@ -53,3 +53,7 @@ Windows PnP 可识别 DualSense，但 UE 日志只注册 XInputInterface::XInput
 
 Windows 当前仍能识别 DualSense Edge，设备状态为 `OK`。Codex 配置的 `http://127.0.0.1:8000/mcp` 当前无监听服务。隔离工程重新编译通过，DualSense 仍没有 UE Enhanced Input 回调和原始 CSV。详细记录见 Evidence/P1/InputPrecisionValidation/p1_recheck_2026-11-22.md。P1 继续保持未完成状态。
 
+## DualSense 驱动栈审计补充
+
+DualSense 手柄接口使用 Windows 标准 HID/HidUsb 驱动。系统安装了 Nefarius ViGEmBus，但没有活动虚拟手柄，也没有运行中的 Steam、DS4Windows 或 reWASD 进程。驱动层审计为 PASS，UE RawInput 轴事件链路仍未产生采样回调。证据见 Evidence/P1/InputPrecisionValidation/DualSense_driver_audit_2026-11-22.md。
+
