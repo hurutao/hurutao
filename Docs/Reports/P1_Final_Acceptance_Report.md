@@ -61,3 +61,7 @@ DualSense 手柄接口使用 Windows 标准 HID/HidUsb 驱动。系统安装了 
 
 项目负责人已在前台运行窗口完成摇杆、扳机和按键操作。采样器和 RawInput 设备注册日志正常，但没有生成 `P1_INPUT_SAMPLE`、`P1_RAW_AXIS` 或新增 CSV 数据。该项最终状态为 BLOCKED，证据见 Evidence/P1/InputPrecisionValidation/DualSense_capture_final_blocker_2026-11-22.md。P1 不能完成验收。
 
+## Steam Input 路径人工验证
+
+项目负责人反馈，启动 Steam Input 后启动 UE5，DualSense 已能够控制 UE5 模型视野。该路径状态为 HUMAN-VERIFIED，证明 Steam Input 能提供可用的控制转换。隔离采样工程尚未产生 Steam Input 路径的自动化 CSV，因此精度、死区、重复输入和异常跳变仍为 UNVERIFIED。证据见 Evidence/P1/InputPrecisionValidation/SteamInput_human_verification_2026-11-22.md。
+
