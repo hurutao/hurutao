@@ -28,5 +28,5 @@
 
 ## 结论
 
-Codex GitHub connector 已登录并可以读取目标仓库及其权限信息。当前账号对 `hurutao/hurutao` 具有管理员和推送权限。Git CLI 的普通 `git push origin master` 已在另一份推送证据中完成；本轮没有使用强制推送。
+Codex GitHub connector 已登录并可以读取目标仓库及其权限信息。当前账号对 `hurutao/hurutao` 具有管理员和推送权限。既有 P1 提交已通过普通 `git push origin master` 完成；本轮报告和本证据文件在 Git CLI 网络重试出现 `Recv failure: Connection was reset` 后，通过 connector Contents API 以快进提交写入远程 `master`。本轮没有使用强制推送或覆盖远程历史。
 
