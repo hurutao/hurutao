@@ -1,6 +1,6 @@
 # P1 Final Acceptance Report
 
-日期：2026-11-20
+日期：2026-11-22
 
 ## 本轮剩余任务状态
 
@@ -93,11 +93,30 @@ Xbox CSV 缺少原始轴列的数值，现有文件只能验证处理后范围�
 | 正式项目 Xbox/通用手柄输入 | 保留 | 通用 Gamepad/Steam Input 动作映射未删除 |
 | 正式项目 UE 5.9 完整编译 | PASS | UnrealBuildTool 输出 `Result: Succeeded` |
 | Unreal MCP 握手 | PASS | `serverInfo.name=unreal-mcp`，`projectName=FPSArena` |
-| Xbox 径向死区复采 | UNVERIFIED | 现有 CSV 的 `raw_x/raw_y` 列为空，不能证明复采结果 |
+| Xbox 径向死区复采 | PASS | `Evidence/P1/InputPrecisionValidation/Raw/Xbox_2026-11-22/P1InputSamples_xbox_full.csv` 含 `raw_x/raw_y`、轴向和径向输出；静止窗口径向输出为零，全行程/对角输入产生非零输出 |
+| Xbox 摇杆、扳机和按键逐帧 CSV | PASS | 完整 CSV 共 54,092 行，含 LeftStick/RightStick、LT_L2/RT_R2 和 10 个按键动作 |
+| Xbox 中心漂移与重复输入 | PASS | 静止窗口原始偏移在径向死区内；修正逐帧重复计数后 `duplicate_count` 最大为 0 |
 | GitHub 远程存在性、读写权限、P1 推送 | BLOCKED | `git ls-remote` 连接 `github.com:443` 超时，GitHub connector 返回 `USER_NOT_LOGGED_IN` |
-| P1 是否可进入 P2 | BLOCKED | GitHub 远程核验和 Xbox 径向死区复采仍未完成 |
+| P1 是否可进入 P2 | BLOCKED | GitHub 远程存在性、读写权限和 P1 推送仍未完成；P2 继续禁止进入 |
 
 DualSense 的 GameInput 接入层已恢复并通过运行日志验证，之前的 PS5 专用 Steam/HID 路径仍保持移除。项目仍停留在 P1，待实际事件采样、GitHub 远程核验和 Xbox 径向死区复采完成后，才可评估 P2。
+
+## Xbox 实体输入自动化复验（2026-11-22）
+
+隔离工程已重新编译并在运行模式下捕获 Xbox One 控制器的真实 Enhanced Input 数据。完整 CSV 共 54,092 行：左右摇杆 X/Y 均覆盖 `[-1,1]`，LT/RT 均达到 `1.0`，并产生 A/B/X/Y、LB/RB、View/Menu、LS/RS 十个按键的 `button_state=1` 记录。原始轴值、处理前值、轴向死区值和径向死区值均写入 CSV。详细统计和文件路径见 `Evidence/P1/InputPrecisionValidation/Xbox_recapture_2026-11-22.md`。
+
+静止窗口左摇杆原始最大模长为 `0.006564`、右摇杆为 `0.059656`，两者轴向和径向死区输出均为零；全行程和对角输入产生非零径向输出。修正逐帧集合清理后，`duplicate_count` 最大为 `0`。左右摇杆各有一次超过 `0.75` 的相邻步长，均出现在用户切换全行程方向的动作边界；没有额外异常跳变。Xbox 径向死区复采、中心漂移和重复输入更新为 `PASS`。
+
+采样器仍将 `device`、`connection` 和 `raw_layer_status` 标为 `UNVERIFIED`，因为本轮验证的是 XInput/Enhanced Input 处理链路，没有把处理后的值冒充 HID 原始报告。原始 CSV 和运行日志位于 `Evidence/P1/InputPrecisionValidation/Raw/Xbox_2026-11-22/`。
+
+## 当前 P1 验收结论（更新后）
+
+- `PASS`：隔离采样工具可编译、可运行并产生真实 Xbox CSV；摇杆、扳机、十个主要按键、轴向/径向死区、中心静止窗口和逐帧重复计数均有证据。
+- `HUMAN-VERIFIED`：FPSArena 中 Xbox 与 DualSense 基础控制，以及 DualSense 左右摇杆方向。
+- `BLOCKED`：GitHub Beast-Training-Grounds 远程存在性、读写权限和 P1 推送。当前仍受 `git ls-remote` 网络超时及 GitHub connector `USER_NOT_LOGGED_IN` 阻断，未执行强制推送或历史覆盖。
+- `UNVERIFIED`：采样 CSV 的底层 `RawInput/HID` 原始层级和设备字段；这不影响本轮 XInput/Enhanced Input 处理链路的 Xbox 验证。
+
+P1 仍未完成，禁止进入 P2。下一步只剩项目负责人完成 GitHub 连接器登录或提供可访问的准确远程仓库后，复核远程存在性、读写权限和本地提交推送状态；完成后停止并等待项目负责人验收。
 
 ## DualSense GameInput 修复复核（2026-11-22）
 
