@@ -92,6 +92,7 @@ Xbox CSV 缺少原始轴列的数值，现有文件只能验证处理后范围�
 | 正式项目 DualSense GameInput 接入 | PASS | GameInput 识别 `054C:0DF2`，映射初始化 6 轴、12 按键 |
 | DualSense 基础控制 | HUMAN-VERIFIED | 项目负责人确认已可控制 FPSArena 画面，尚无自动化逐帧 CSV |
 | DualSense 左右摇杆方向 | HUMAN-VERIFIED | 项目负责人确认左右摇杆方向均正常 |
+| DualSense GameInput 粗粒度采样 | PASS | GameInput 注册 `054C:0DF2`，隔离 CSV 记录左右摇杆及 LT/RT；精细数据按负责人决定延期 |
 | 正式项目 Xbox/通用手柄输入 | 保留 | 通用 Gamepad/Steam Input 动作映射未删除 |
 | 正式项目 UE 5.9 完整编译 | PASS | UnrealBuildTool 输出 `Result: Succeeded` |
 | Unreal MCP 握手 | PASS | `serverInfo.name=unreal-mcp`，`projectName=FPSArena` |
@@ -140,7 +141,7 @@ GitHub 连接器调用仍返回 `USER_NOT_LOGGED_IN`，本机对该地址执行 
 
 为完成 P1 的 DualSense 自动化采样，隔离工程已启用 UE 5.9 `GameInputWindows`/`GameInput`，增加 `GameInputBase` 依赖，并加入 DualSense Edge `054C:0DF2` 的 6 轴、12 按键运行时映射。工程通过 UBT 编译，结果为 `Result: Succeeded`；运行日志确认 GameInput 模块启动并输出 `P1_INPUT DualSense GameInput mappings initialized: 6 axes, 12 buttons`。证据见 `Evidence/P1/InputPrecisionValidation/DualSense_sampler_GameInput_setup_2026-11-22.log`。
 
-本次运行时 Windows 只检测到 Xbox One 控制器，没有检测到 DualSense，因此尚未生成真实 DualSense CSV。该项继续为 `UNVERIFIED`，不得用 Xbox 或模拟值替代。完成采样需要连接 DualSense 后运行隔离工程并执行相同的摇杆、扳机和按键动作序列。
+本次运行时已检测到 DualSense 并生成真实摇杆和 LT/RT CSV。由于项目负责人决定将精细输入数据留到后期调试，DualSense 的精细死区、中心漂移、异常跳变和完整按键逐帧数据保留为 `UNVERIFIED（延期）`；粗粒度 GameInput 路径更新为 `PASS`。证据见 `Evidence/P1/InputPrecisionValidation/DualSense_coarse_capture_2026-11-22.md`。
 
 ## DualSense GameInput 修复复核（2026-11-22）
 
